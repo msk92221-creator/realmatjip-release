@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from .models import Base
 
-SCHEMA_VERSION = "3"  # v3: manual_labels 2축 분리 (Phase 3A.1)
+SCHEMA_VERSION = "4"  # v4: restaurants.provider_metadata 추가 (Google Places 연동)
 
 
 def make_engine(database_url: str) -> Engine:
@@ -20,6 +20,7 @@ def make_session_factory(engine: Engine) -> sessionmaker[Session]:
 def init_db(engine: Engine) -> None:
     _migrate_analysis_cache_pk(engine)
     _migrate_manual_labels_two_axis(engine)
+    _migrate_restaurant_provider_metadata(engine)
     Base.metadata.create_all(engine)
     with engine.begin() as conn:
         conn.execute(
@@ -59,3 +60,19 @@ def _migrate_manual_labels_two_axis(engine: Engine) -> None:
         if "ad_label" in columns:
             return  # 이미 v3
         conn.execute(text("DROP TABLE manual_labels"))
+
+
+def _migrate_restaurant_provider_metadata(engine: Engine) -> None:
+    """v3 restaurants → v4: provider_metadata(JSON, nullable) 컬럼 추가.
+
+    create_all은 기존 테이블에 컬럼을 붙이지 않으므로, v4 이전에 만들어진 DB는
+    RestaurantORM 조회가 전부 'no such column'으로 실패한다. 값이 nullable이라
+    기존 행은 그대로 두고 ADD COLUMN만 수행한다."""
+    with engine.begin() as conn:
+        rows = conn.execute(text("PRAGMA table_info(restaurants)")).fetchall()
+        if not rows:
+            return  # 테이블 자체가 없으면 create_all이 최신 스키마로 생성
+        columns = [row[1] for row in rows]
+        if "provider_metadata" in columns:
+            return  # 이미 v4
+        conn.execute(text("ALTER TABLE restaurants ADD COLUMN provider_metadata JSON"))

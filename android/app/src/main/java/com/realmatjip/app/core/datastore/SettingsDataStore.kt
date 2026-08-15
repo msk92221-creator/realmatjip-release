@@ -28,7 +28,9 @@ class SettingsDataStore @Inject constructor(
     }
 
     override val backendUrl: Flow<String> = context.settingsDataStore.data.map { prefs ->
-        prefs[Keys.BACKEND_URL] ?: ConnectionSettingsHolder.DEFAULT_BACKEND_URL
+        // 빈 값은 "미설정"과 같게 취급 — 설정 화면에서 주소를 지우고 저장하면 기본값으로 되돌아간다.
+        prefs[Keys.BACKEND_URL]?.takeIf { it.isNotBlank() }
+            ?: ConnectionSettingsHolder.DEFAULT_BACKEND_URL
     }
 
     override val apiToken: Flow<String> = context.settingsDataStore.data.map { prefs ->
