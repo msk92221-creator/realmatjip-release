@@ -1,0 +1,82 @@
+{
+  "version": "review-analysis-v1",
+  "examples": [
+    {
+      "review": {
+        "source": "naver_blog",
+        "rating": null,
+        "text": "강남 마르게리타 맛집 찾아서 다녀왔어요. 720시간 숙성 도우가 특징인 곳이에요. 위치는 강남역 3번 출구에서 도보 5분, 건물 뒤편 주차장 이용 가능합니다. 영업시간 11:00~21:00, 라스트오더 20:30이니 참고하세요. 예약은 네이버예약으로 편하게 가능해요. 맛, 서비스, 가격, 분위기 전부 만점입니다. 데이트 코스로 완전 강추합니다!"
+      },
+      "output": {
+        "ad_probability": 0.88,
+        "ad_confidence": 0.8,
+        "authenticity": 0.22,
+        "specificity": 0.55,
+        "local_probability": 0.1,
+        "sentiment": {"food": 0.95, "service": 0.95, "price": 0.9, "atmosphere": 0.95, "accessibility": 0.9},
+        "visit_context": {"repeat_visit": false, "wait_time_mentioned": false, "menu_specificity": 0.4, "negative_points_present": false},
+        "signals": {
+          "ad_signals": [
+            {"code": "catalog_listing", "quote": "위치는 강남역 3번 출구에서 도보 5분, 건물 뒤편 주차장 이용 가능합니다. 영업시간 11:00~21:00"},
+            {"code": "all_positive_no_drawback", "quote": "맛, 서비스, 가격, 분위기 전부 만점입니다"},
+            {"code": "cta_outlink", "quote": "예약은 네이버예약으로 편하게 가능해요"}
+          ],
+          "authentic_signals": []
+        },
+        "pseudo_rating": 4.8,
+        "summary": "매장 정보의 카탈로그식 나열과 전 항목 칭찬, 예약 유도가 포함되어 프로모션성 패턴일 가능성이 높다.",
+        "flags": {"insufficient_text": false}
+      }
+    },
+    {
+      "review": {
+        "source": "naver_map",
+        "rating": 4.0,
+        "text": "회사가 근처라 점심으로 자주 가는 곳. 이번이 네 번째 방문인데 국물 맛이 항상 일정해서 좋아요. 대신 12시 초반에 가면 자리 잡기 어렵습니다."
+      },
+      "output": {
+        "ad_probability": 0.05,
+        "ad_confidence": 0.9,
+        "authenticity": 0.93,
+        "specificity": 0.88,
+        "local_probability": 0.88,
+        "sentiment": {"food": 0.85, "service": 0.7, "price": null, "atmosphere": 0.65, "accessibility": null},
+        "visit_context": {"repeat_visit": true, "wait_time_mentioned": true, "menu_specificity": 0.8, "negative_points_present": true},
+        "signals": {
+          "ad_signals": [],
+          "authentic_signals": [
+            {"code": "repeat_visit", "quote": "이번이 네 번째 방문인데"},
+            {"code": "local_context", "quote": "회사가 근처라 점심으로 자주 가는 곳"},
+            {"code": "negative_point", "quote": "12시 초반에 가면 자리 잡기 어렵습니다"}
+          ]
+        },
+        "pseudo_rating": null,
+        "summary": "재방문과 로컬 문맥, 단점 언급이 있는 신뢰도 높은 실방문 후기.",
+        "flags": {"insufficient_text": false}
+      }
+    },
+    {
+      "review": {
+        "source": "kakao_map",
+        "rating": 5.0,
+        "text": "친구 추천으로 갔는데 분위기 좋고 맛있었어요"
+      },
+      "output": {
+        "ad_probability": 0.28,
+        "ad_confidence": 0.45,
+        "authenticity": 0.6,
+        "specificity": 0.2,
+        "local_probability": 0.5,
+        "sentiment": {"food": 0.8, "service": null, "price": null, "atmosphere": 0.8, "accessibility": null},
+        "visit_context": {"repeat_visit": null, "wait_time_mentioned": false, "menu_specificity": 0.1, "negative_points_present": null},
+        "signals": {
+          "ad_signals": [],
+          "authentic_signals": []
+        },
+        "pseudo_rating": null,
+        "summary": "짧고 긍정적이나 근거 부족 — 광고 신호도 진성 신호도 없어 판단이 어렵다.",
+        "flags": {"insufficient_text": false}
+      }
+    }
+  ]
+}

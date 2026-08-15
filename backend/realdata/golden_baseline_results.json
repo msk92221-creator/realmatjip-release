@@ -1,0 +1,2222 @@
+{
+  "summary": {
+    "run_id": "golden-baseline-20260815-0848",
+    "golden_set_version": "golden-v1",
+    "model": "glm-4.5-flash",
+    "prompt_version": "review-analysis-v1",
+    "inference_config_version": "v2-thinking-off-json-2048",
+    "scoring_algorithm_version": "v0.1-phase0",
+    "ad_prior": 0.3,
+    "timestamp": "2026-08-15T08:48:38.289669",
+    "total_reviews": 59,
+    "structured_output": {
+      "first_pass": 59,
+      "repair_success": 0,
+      "fallback": 0,
+      "first_pass_rate": 1.0
+    },
+    "tokens": {
+      "total_input": 145495,
+      "total_output": 14919,
+      "input_per_review": 2466,
+      "output_per_review": 253
+    },
+    "latency": {
+      "median_ms": 9554,
+      "p95_ms": 40275,
+      "max_ms": 46849
+    }
+  },
+  "results": [
+    {
+      "review_id": "gold-000",
+      "restaurant": "광화문국밥본가",
+      "short_text": "회사가 근처라 점심으로 자주 갑니다. 이번이 다섯 번째 방문인데 국물 맛이 항상 일정해서 좋아요. 대신 12",
+      "source": "naver_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.05,
+      "ad_confidence": 0.9,
+      "p_eff": 0.075,
+      "authenticity": 0.93,
+      "specificity": 0.88,
+      "local_probability": 0.88,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "이번이 다섯 번째 방문인데"
+        },
+        {
+          "code": "local_context",
+          "quote": "회사가 근처라 점심으로 자주 갑니다"
+        },
+        {
+          "code": "negative_point",
+          "quote": "대신 12시 초반에는 줄이 있어요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2479,
+      "output_tokens": 269,
+      "latency_ms": 8596,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.05,\"ad_confidence\":0.9,\"authenticity\":0.93,\"specificity\":0.88,\"local_probability\":0.88,\"sentiment\":{\"food\":0.85,\"service\":0.7,\"price\":null,\"atmosphere\":0.65,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":true,\"menu_specificity\":0.8,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"이번이 다섯 번째 방문인데\"},{\"code\":\"local_context\",\"quote\":\"회사가 근처라 점심으로 자주 갑니다\"},{\"code\":\"negative_point\",\"quote\":\"대신 12시 초반에는 줄이 있어요\"}]},\"pseudo_rating\":null,\"summary\":\"재방문과 로컬 문맥, 단점 언급이 있는 신뢰도 높은 실방문 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-001",
+      "restaurant": "광화문국밥본가",
+      "short_text": "동네에서 10년째 가는 단골집이에요. 엄마랑 자주 오는데 순대국이 여기가 최고예요. 주차장이 좁은 게 흠.",
+      "source": "naver_map",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.9,
+      "p_eff": 0.12,
+      "authenticity": 0.95,
+      "specificity": 0.85,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "동네에서 10년째 가는 단골집이에요"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "순대국이 여기가 최고예요"
+        },
+        {
+          "code": "negative_point",
+          "quote": "주차장이 좁은 게 흠"
+        },
+        {
+          "code": "local_context",
+          "quote": "동네에서 10년째 가는 단골집이에요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2470,
+      "output_tokens": 301,
+      "latency_ms": 9499,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.9,\"authenticity\":0.95,\"specificity\":0.85,\"local_probability\":0.95,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":0.7,\"accessibility\":0.5},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.9,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"동네에서 10년째 가는 단골집이에요\"},{\"code\":\"specific_menu_eval\",\"quote\":\"순대국이 여기가 최고예요\"},{\"code\":\"negative_point\",\"quote\":\"주차장이 좁은 게 흠\"},{\"code\":\"local_context\",\"quote\":\"동네에서 10년째 가는 단골집이에요\"}]},\"pseudo_rating\":null,\"summary\":\"장기간 단골과 구체적 메뉴 평가, 단점 언급이 진성 리뷰의 특징을 보여준다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-002",
+      "restaurant": "광화문국밥본가",
+      "short_text": "집이 근처라 배고플 때 갑니다. 5년째 가는데 맛이 변한 적이 없어요. 여름엔 줄 서니 오전 11시 전을 추",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.95,
+      "specificity": 0.7,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "5년째 가는데 맛이 변한 적이 없어요"
+        },
+        {
+          "code": "local_context",
+          "quote": "집이 근처라 배고플 때 갑니다"
+        },
+        {
+          "code": "visit_timing",
+          "quote": "여름엔 줄 서니 오전 11시 전을 추천합니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2470,
+      "output_tokens": 269,
+      "latency_ms": 8119,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.95,\"specificity\":0.7,\"local_probability\":0.95,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":0.8},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":true,\"menu_specificity\":0.5,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"5년째 가는데 맛이 변한 적이 없어요\"},{\"code\":\"local_context\",\"quote\":\"집이 근처라 배고플 때 갑니다\"},{\"code\":\"visit_timing\",\"quote\":\"여름엔 줄 서니 오전 11시 전을 추천합니다\"}]},\"pseudo_rating\":null,\"summary\":\"장기 단골과 로컬 문맥, 구체적 방문 팁이 담긴 진성 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-003",
+      "restaurant": "광화문국밥본가",
+      "short_text": "아이 학원 끝나고 엄마들끼리 단골로 가는 곳. 백반이 든든하고 반찬도 계속 챙겨주세요. 11시 50분 전에 ",
+      "source": "kakao_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.9,
+      "specificity": 0.85,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "엄마들끼리 단골로 가는 곳"
+        },
+        {
+          "code": "local_context",
+          "quote": "아이 학원 끝나고 엄마들끼리 단골로 가는 곳"
+        },
+        {
+          "code": "wait_time",
+          "quote": "11시 50분 전에 가야 대기 없어요"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "백반이 든든하고 반찬도 계속 챙겨주세요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2483,
+      "output_tokens": 316,
+      "latency_ms": 9706,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.9,\"specificity\":0.85,\"local_probability\":0.95,\"sentiment\":{\"food\":0.9,\"service\":0.9,\"price\":null,\"atmosphere\":null,\"accessibility\":0.9},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":true,\"menu_specificity\":0.7,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"엄마들끼리 단골로 가는 곳\"},{\"code\":\"local_context\",\"quote\":\"아이 학원 끝나고 엄마들끼리 단골로 가는 곳\"},{\"code\":\"wait_time\",\"quote\":\"11시 50분 전에 가야 대기 없어요\"},{\"code\":\"specific_menu_eval\",\"quote\":\"백반이 든든하고 반찬도 계속 챙겨주세요\"}]},\"pseudo_rating\":null,\"summary\":\"로컬 문맥과 재방문, 구체적 방문 시간과 메뉴 평가가 담긴 진성 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-004",
+      "restaurant": "광화문국밥본가",
+      "short_text": "맛은 괜찮은데 테이블 간격이 좁아서 대화하기 조금 불편했어요. 국밥 양은 적당합니다.",
+      "source": "naver_map",
+      "rating": 3.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.85,
+      "specificity": 0.75,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "negative_point",
+          "quote": "테이블 간격이 좁아서 대화하기 조금 불편했어요"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "국밥 양은 적당합니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2464,
+      "output_tokens": 248,
+      "latency_ms": 9554,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.85,\"specificity\":0.75,\"local_probability\":0.5,\"sentiment\":{\"food\":0.6,\"service\":0.4,\"price\":null,\"atmosphere\":0.4,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.7,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"negative_point\",\"quote\":\"테이블 간격이 좁아서 대화하기 조금 불편했어요\"},{\"code\":\"specific_menu_eval\",\"quote\":\"국밥 양은 적당합니다\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 메뉴 평가와 단점 언급이 있어 신뢰도가 높은 실방문 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-005",
+      "restaurant": "광화문국밥본가",
+      "short_text": "술 한 잔 하고 다음 날 해장으로 갔는데 국물이 진짜 시원해요. 3번째 재방문입니다.",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.9,
+      "specificity": 0.7,
+      "local_probability": 0.56,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "3번째 재방문입니다"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "국물이 진짜 시원해요"
+        },
+        {
+          "code": "visit_timing",
+          "quote": "술 한 잔 하고 다음 날 해장으로 갔는데"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2455,
+      "output_tokens": 251,
+      "latency_ms": 8164,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.9,\"specificity\":0.7,\"local_probability\":0.7,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.6,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"3번째 재방문입니다\"},{\"code\":\"specific_menu_eval\",\"quote\":\"국물이 진짜 시원해요\"},{\"code\":\"visit_timing\",\"quote\":\"술 한 잔 하고 다음 날 해장으로 갔는데\"}]},\"pseudo_rating\":null,\"summary\":\"재방문과 구체적인 방문 상황, 메뉴 평가가 담긴 진성 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-006",
+      "restaurant": "광화문국밥본가",
+      "short_text": "직장인들이 점심에 많이 오네요. 메뉴는 국밥 몇 개 없지만 고르기 쉬워요.",
+      "source": "kakao_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.75,
+      "specificity": 0.6,
+      "local_probability": 0.9,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "직장인들이 점심에 많이 오네요"
+        },
+        {
+          "code": "negative_point",
+          "quote": "메뉴는 국밥 몇 개 없지만"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2456,
+      "output_tokens": 248,
+      "latency_ms": 8061,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.75,\"specificity\":0.6,\"local_probability\":0.9,\"sentiment\":{\"food\":0.7,\"service\":null,\"price\":null,\"atmosphere\":0.6,\"accessibility\":0.8},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.7,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"직장인들이 점심에 많이 오네요\"},{\"code\":\"negative_point\",\"quote\":\"메뉴는 국밥 몇 개 없지만\"}]},\"pseudo_rating\":null,\"summary\":\"직장인 점심 문맥과 메뉴 단점 언급이 있어 광고 가능성은 낮고 신뢰도는 높다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-007",
+      "restaurant": "광화문국밥본가",
+      "short_text": "가격이 올랐는데 양은 줄었어요. 2인 방문에 3만원. 맛은 나쁘지 않지만 이 가격이면 다른 데 갑니다.",
+      "source": "naver_map",
+      "rating": 2.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.9,
+      "specificity": 0.85,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "price_detail",
+          "quote": "2인 방문에 3만원"
+        },
+        {
+          "code": "negative_point",
+          "quote": "가격이 올랐는데 양은 줄었어요. 맛은 나쁘지 않지만 이 가격이면 다른 데 갑니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2469,
+      "output_tokens": 254,
+      "latency_ms": 11744,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.9,\"specificity\":0.85,\"local_probability\":0.5,\"sentiment\":{\"food\":0.5,\"service\":null,\"price\":0.2,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.5,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"price_detail\",\"quote\":\"2인 방문에 3만원\"},{\"code\":\"negative_point\",\"quote\":\"가격이 올랐는데 양은 줄었어요. 맛은 나쁘지 않지만 이 가격이면 다른 데 갑니다\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 가격 언급과 단점 표현이 진성 후기 특징을 보여준다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-008",
+      "restaurant": "광화문국밥본가",
+      "short_text": "광화문 국밥 맛집으로 유명한 곳에 다녀왔습니다. 24시간 노포 운영으로 유명하고요. 위치는 광화문역 5번 출",
+      "source": "naver_blog",
+      "rating": null,
+      "ground_truth_ad": "likely_ad",
+      "ground_truth_manipulation": null,
+      "dataset": "challenge",
+      "label_reason": "카탈로그형 블로그: 위치/영업시간/포장/단체석/가격 나열 + 전 항목 만점 + 강추 CTA",
+      "ad_probability": 0.92,
+      "ad_confidence": 0.85,
+      "p_eff": 0.827,
+      "authenticity": 0.15,
+      "specificity": 0.6,
+      "local_probability": 0.3,
+      "ad_signals": [
+        {
+          "code": "catalog_listing",
+          "quote": "위치는 광화문역 5번 출구에서 도보 3분, 인근 공영주차장 이용 가능합니다. 영업시간은 24시간 연중무휴, 마지막 주문은 없습니다. 포장 가능하고 단체석도 있습니다."
+        },
+        {
+          "code": "all_positive_no_drawback",
+          "quote": "맛, 서비스, 가격, 분위기 전부 만점입니다"
+        },
+        {
+          "code": "cta_outlink",
+          "quote": "꼭 방문해보세요!"
+        }
+      ],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2569,
+      "output_tokens": 339,
+      "latency_ms": 46849,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.92,\"ad_confidence\":0.85,\"authenticity\":0.15,\"specificity\":0.6,\"local_probability\":0.3,\"sentiment\":{\"food\":1.0,\"service\":1.0,\"price\":1.0,\"atmosphere\":1.0,\"accessibility\":1.0},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.3,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"catalog_listing\",\"quote\":\"위치는 광화문역 5번 출구에서 도보 3분, 인근 공영주차장 이용 가능합니다. 영업시간은 24시간 연중무휴, 마지막 주문은 없습니다. 포장 가능하고 단체석도 있습니다.\"},{\"code\":\"all_positive_no_drawback\",\"quote\":\"맛, 서비스, 가격, 분위기 전부 만점입니다\"},{\"code\":\"cta_outlink\",\"quote\":\"꼭 방문해보세요!\"}],\"authentic_signals\":[]},\"pseudo_rating\":5.0,\"summary\":\"매장 정보의 체계적 나열과 전 항목 만점 평가, 방문 유도가 포함된 프로모션성 패턴이다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-009",
+      "restaurant": "광화문국밥본가",
+      "short_text": "서울 3대 국밥집 반열에 오른 곳입니다. 30년 전통의 숙성 국물이 자랑이며 프리미엄 식재료를 사용합니다. ",
+      "source": "naver_blog",
+      "rating": null,
+      "ground_truth_ad": "likely_ad",
+      "ground_truth_manipulation": null,
+      "dataset": "challenge",
+      "label_reason": "카탈로그형 블로그: 30년 전통 USP + 프리미엄 식재료 + 찾아가는 길 + 주차 + 연예인 언급 + 강추",
+      "ad_probability": 0.75,
+      "ad_confidence": 0.8,
+      "p_eff": 0.66,
+      "authenticity": 0.4,
+      "specificity": 0.6,
+      "local_probability": 0.3,
+      "ad_signals": [
+        {
+          "code": "catalog_listing",
+          "quote": "찾아가는 길: 지하철 5호선 광화문역 5번 출구 직진 200미터. 주차는 인근 3곳 주차장에서 2시간 무료 유효합니다"
+        },
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "30년 전통의 숙성 국물이 자랑이며 프리미엄 식재료를 사용합니다"
+        },
+        {
+          "code": "template_style",
+          "quote": "서울 3대 국밥집 반열에 오른 곳입니다"
+        }
+      ],
+      "authentic_signals": [
+        {
+          "code": "wait_time",
+          "quote": "웨이팅은 있지만 회전이 빠릅니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2568,
+      "output_tokens": 368,
+      "latency_ms": 40278,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.75,\"ad_confidence\":0.8,\"authenticity\":0.4,\"specificity\":0.6,\"local_probability\":0.3,\"sentiment\":{\"food\":0.95,\"service\":0.8,\"price\":null,\"atmosphere\":0.8,\"accessibility\":0.9},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":true,\"menu_specificity\":0.5,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"catalog_listing\",\"quote\":\"찾아가는 길: 지하철 5호선 광화문역 5번 출구 직진 200미터. 주차는 인근 3곳 주차장에서 2시간 무료 유효합니다\"},{\"code\":\"marketing_usp_repeat\",\"quote\":\"30년 전통의 숙성 국물이 자랑이며 프리미엄 식재료를 사용합니다\"},{\"code\":\"template_style\",\"quote\":\"서울 3대 국밥집 반열에 오른 곳입니다\"}],\"authentic_signals\":[{\"code\":\"wait_time\",\"quote\":\"웨이팅은 있지만 회전이 빠릅니다\"}]},\"pseudo_rating\":4.8,\"summary\":\"카탈로그식 정보 제공과 USP 반복, 템플릿 문체가 포함되어 광고 가능성이 있다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-010",
+      "restaurant": "광화문국밥본가",
+      "short_text": "맛있어요 또 올게요",
+      "source": "kakao_map",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.3,
+      "ad_confidence": 0.5,
+      "p_eff": 0.3,
+      "authenticity": 0.6,
+      "specificity": 0.1,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "또 올게요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2430,
+      "output_tokens": 208,
+      "latency_ms": 17247,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.3,\"ad_confidence\":0.5,\"authenticity\":0.6,\"specificity\":0.1,\"local_probability\":0.5,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.1,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"또 올게요\"}]},\"pseudo_rating\":null,\"summary\":\"재방문 의사 표현이 있으나 정보가 너무 적어 광고 가능성과 진성 여부 모두 불확실하다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-011",
+      "restaurant": "광화문국밥본가",
+      "short_text": "관광 왔다가 들렀어요. 국밥은 맛있었어요. 다음에 올지는 모르겠습니다.",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.7,
+      "specificity": 0.4,
+      "local_probability": 0.2,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "specific_menu_eval",
+          "quote": "국밥은 맛있었어요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2453,
+      "output_tokens": 202,
+      "latency_ms": 7388,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.7,\"specificity\":0.4,\"local_probability\":0.2,\"sentiment\":{\"food\":0.8,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.6,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"specific_menu_eval\",\"quote\":\"국밥은 맛있었어요\"}]},\"pseudo_rating\":null,\"summary\":\"관광객의 간단한 방문 후기로, 광고 가능성은 낮다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-012",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "회사 건너편이라 일주일에 두 번은 가요. 돈까스가 부드럽고 양도 많아요. 웨이팅 20분 정도는 각오하세요.",
+      "source": "naver_map",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.95,
+      "specificity": 0.85,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "일주일에 두 번은 가요"
+        },
+        {
+          "code": "local_context",
+          "quote": "회사 건너편이라"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "돈까스가 부드럽고 양도 많아요"
+        },
+        {
+          "code": "wait_time",
+          "quote": "웨이팅 20분 정도는 각오하세요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2470,
+      "output_tokens": 293,
+      "latency_ms": 12475,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.95,\"specificity\":0.85,\"local_probability\":0.95,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":true,\"menu_specificity\":0.9,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"일주일에 두 번은 가요\"},{\"code\":\"local_context\",\"quote\":\"회사 건너편이라\"},{\"code\":\"specific_menu_eval\",\"quote\":\"돈까스가 부드럽고 양도 많아요\"},{\"code\":\"wait_time\",\"quote\":\"웨이팅 20분 정도는 각오하세요\"}]},\"pseudo_rating\":null,\"summary\":\"재방문 빈도, 로컬 문맥, 구체적 메뉴 평가, 대기시간 언급이 진성 후기 특징을 보여준다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-013",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "친구 생일에 예약하고 갔는데 좋았어요. 돈까스는 맛있는데 냉소바는 평범했어요. 재방문 의사 있습니다.",
+      "source": "naver_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.9,
+      "specificity": 0.75,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "specific_menu_eval",
+          "quote": "돈까스는 맛있는데 냉소바는 평범했어요"
+        },
+        {
+          "code": "negative_point",
+          "quote": "냉소바는 평범했어요"
+        },
+        {
+          "code": "repeat_visit",
+          "quote": "재방문 의사 있습니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2466,
+      "output_tokens": 258,
+      "latency_ms": 13534,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.9,\"specificity\":0.75,\"local_probability\":0.5,\"sentiment\":{\"food\":0.7,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.8,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"specific_menu_eval\",\"quote\":\"돈까스는 맛있는데 냉소바는 평범했어요\"},{\"code\":\"negative_point\",\"quote\":\"냉소바는 평범했어요\"},{\"code\":\"repeat_visit\",\"quote\":\"재방문 의사 있습니다\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 메뉴 평가와 단점 언급, 재방문 의사가 진성 후기 특징이다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-014",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "이 동네 토박이인데 여기 돈까스는 어릴 때부터 그 맛이에요. 지금은 아들하고 같이 갑니다.",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.95,
+      "specificity": 0.6,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "이 동네 토박이인데"
+        },
+        {
+          "code": "repeat_visit",
+          "quote": "지금은 아들하고 같이 갑니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2460,
+      "output_tokens": 232,
+      "latency_ms": 7627,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.95,\"specificity\":0.6,\"local_probability\":0.95,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.7,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"이 동네 토박이인데\"},{\"code\":\"repeat_visit\",\"quote\":\"지금은 아들하고 같이 갑니다\"}]},\"pseudo_rating\":null,\"summary\":\"토박이 정체성과 세대를 넘나드는 방문 경험으로 진성 리뷰 가능성이 높다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-015",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "매주 금요일 퇴근길 약속 장소예요. 안주가 진짜 밥도둑이에요. 자리는 좁아요.",
+      "source": "kakao_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.9,
+      "specificity": 0.7,
+      "local_probability": 0.62,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "매주 금요일 퇴근길 약속 장소예요"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "안주가 진짜 밥도둑이에요"
+        },
+        {
+          "code": "negative_point",
+          "quote": "자리는 좁아요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2466,
+      "output_tokens": 270,
+      "latency_ms": 8890,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.9,\"specificity\":0.7,\"local_probability\":0.9,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":0.5,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.8,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"매주 금요일 퇴근길 약속 장소예요\"},{\"code\":\"specific_menu_eval\",\"quote\":\"안주가 진짜 밥도둑이에요\"},{\"code\":\"negative_point\",\"quote\":\"자리는 좁아요\"}]},\"pseudo_rating\":null,\"summary\":\"정기 방문과 구체적 메뉴 평가, 단점 언급이 있는 신뢰도 높은 실방문 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-016",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "음식 나오는 속도가 좀 느려요. 맛은 좋으니 천천히 식사할 때 추천합니다.",
+      "source": "naver_map",
+      "rating": 3.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.85,
+      "specificity": 0.6,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "negative_point",
+          "quote": "음식 나오는 속도가 좀 느려요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2455,
+      "output_tokens": 223,
+      "latency_ms": 7528,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.85,\"specificity\":0.6,\"local_probability\":0.5,\"sentiment\":{\"food\":0.7,\"service\":0.4,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":true,\"menu_specificity\":0.3,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"negative_point\",\"quote\":\"음식 나오는 속도가 좀 느려요\"}]},\"pseudo_rating\":null,\"summary\":\"서비스 속도에 대한 단점 언급과 맛에 대한 균형 잡힌 평가가 진성 후기 특징을 보여준다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-017",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "돈까스 완전 맛있어요! 또 올게요",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.5,
+      "p_eff": 0.225,
+      "authenticity": 0.7,
+      "specificity": 0.3,
+      "local_probability": 0.4,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "또 올게요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2436,
+      "output_tokens": 196,
+      "latency_ms": 6018,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.5,\"authenticity\":0.7,\"specificity\":0.3,\"local_probability\":0.4,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.5,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"또 올게요\"}]},\"pseudo_rating\":null,\"summary\":\"간결하지만 재방문 의사 표현으로 광고 가능성은 낮아 보인다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-018",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "가성비 좋아요",
+      "source": "kakao_map",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.5,
+      "p_eff": 0.4,
+      "authenticity": 0.5,
+      "specificity": 0.1,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2427,
+      "output_tokens": 189,
+      "latency_ms": 28670,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.5,\"ad_confidence\":0.5,\"authenticity\":0.5,\"specificity\":0.1,\"local_probability\":0.5,\"sentiment\":{\"food\":null,\"service\":null,\"price\":0.9,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.0,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"극도로 간결하고 정보가 부족하여 광고 가능성과 진성 여부를 판단할 근거가 없다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-019",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "연남동 핫플레이스 수제돈까스 다녀왔어요. 1등급 프리미엄 식재료와 72시간 숙성 히레가 특징입니다. 위치는 ",
+      "source": "naver_blog",
+      "rating": null,
+      "ground_truth_ad": "likely_ad",
+      "ground_truth_manipulation": null,
+      "dataset": "challenge",
+      "label_reason": "카탈로그형 블로그: 1등급/72시간 숙성 USP + 위치/주차/영업시간/예약 + 인스타감성 + 데이트 강추",
+      "ad_probability": 0.85,
+      "ad_confidence": 0.8,
+      "p_eff": 0.74,
+      "authenticity": 0.3,
+      "specificity": 0.5,
+      "local_probability": 0.2,
+      "ad_signals": [
+        {
+          "code": "catalog_listing",
+          "quote": "위치는 홍대입구역 3번 출구에서 도보 10분, 인근 주차장 2곳 이용 가능합니다. 영업시간 11:30~21:00, 라스트오더 20:30이니 참고하세요"
+        },
+        {
+          "code": "cta_outlink",
+          "quote": "예약은 네이버예약으로 편하게 가능합니다"
+        },
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "1등급 프리미엄 식재료와 72시간 숙성 히레가 특징입니다"
+        },
+        {
+          "code": "template_style",
+          "quote": "인스타감성 인테리어에 데이트 코스로 완전 강추!"
+        }
+      ],
+      "authentic_signals": [
+        {
+          "code": "specific_menu_eval",
+          "quote": "1등급 프리미엄 식재료와 72시간 숙성 히레가 특징입니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2590,
+      "output_tokens": 430,
+      "latency_ms": 24517,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.85,\"ad_confidence\":0.8,\"authenticity\":0.3,\"specificity\":0.5,\"local_probability\":0.2,\"sentiment\":{\"food\":0.95,\"service\":0.9,\"price\":0.85,\"atmosphere\":0.95,\"accessibility\":0.9},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.6,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"catalog_listing\",\"quote\":\"위치는 홍대입구역 3번 출구에서 도보 10분, 인근 주차장 2곳 이용 가능합니다. 영업시간 11:30~21:00, 라스트오더 20:30이니 참고하세요\"},{\"code\":\"cta_outlink\",\"quote\":\"예약은 네이버예약으로 편하게 가능합니다\"},{\"code\":\"marketing_usp_repeat\",\"quote\":\"1등급 프리미엄 식재료와 72시간 숙성 히레가 특징입니다\"},{\"code\":\"template_style\",\"quote\":\"인스타감성 인테리어에 데이트 코스로 완전 강추!\"}],\"authentic_signals\":[{\"code\":\"specific_menu_eval\",\"quote\":\"1등급 프리미엄 식재료와 72시간 숙성 히레가 특징입니다\"}]},\"pseudo_rating\":4.8,\"summary\":\"카탈로그식 정보 나열과 USP 반복, 예약 유도가 포함되어 프로모션성 패턴일 가능성이 높다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-020",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "두 번째 방문이에요. 저번이랑 맛이 똑같아서 좋아요. 주차가 좀 어렵지만 근처 공영주차장 이용하면 됩니다.",
+      "source": "naver_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.9,
+      "specificity": 0.7,
+      "local_probability": 0.605,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "두 번째 방문이에요"
+        },
+        {
+          "code": "negative_point",
+          "quote": "주차가 좀 어렵지만 근처 공영주차장 이용하면 됩니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2471,
+      "output_tokens": 247,
+      "latency_ms": 40275,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.9,\"specificity\":0.7,\"local_probability\":0.85,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":0.7,\"accessibility\":0.6},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.6,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"두 번째 방문이에요\"},{\"code\":\"negative_point\",\"quote\":\"주차가 좀 어렵지만 근처 공영주차장 이용하면 됩니다\"}]},\"pseudo_rating\":null,\"summary\":\"재방문 경험과 단점 언급이 있어 광고 가능성이 낮고 신뢰도가 높다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-021",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "SNS 보고 왔는데 실망했어요. 돈까스는 평범하고 사진 찍기만 좋은 곳입니다.",
+      "source": "google_places",
+      "rating": 3.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "부정적 SNS 반응 — 광고가 아님",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.75,
+      "specificity": 0.65,
+      "local_probability": 0.4,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "negative_point",
+          "quote": "실망했어요. 돈까스는 평범하고 사진 찍기만 좋은 곳입니다."
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2454,
+      "output_tokens": 225,
+      "latency_ms": 7789,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.75,\"specificity\":0.65,\"local_probability\":0.4,\"sentiment\":{\"food\":0.4,\"service\":null,\"price\":null,\"atmosphere\":0.3,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.7,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"negative_point\",\"quote\":\"실망했어요. 돈까스는 평범하고 사진 찍기만 좋은 곳입니다.\"}]},\"pseudo_rating\":null,\"summary\":\"SNS 기대와 실제 경험의 차이를 언급하며 객관적인 평가를 제시한다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-022",
+      "restaurant": "연남동수제돈까스",
+      "short_text": "웨이팅 40분. 그래도 기다릴 만했어요. 직원분들 친절합니다.",
+      "source": "kakao_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.85,
+      "specificity": 0.6,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "wait_time",
+          "quote": "웨이팅 40분"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2451,
+      "output_tokens": 216,
+      "latency_ms": 6561,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.85,\"specificity\":0.6,\"local_probability\":0.5,\"sentiment\":{\"food\":null,\"service\":0.9,\"price\":null,\"atmosphere\":null,\"accessibility\":0.6},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":true,\"menu_specificity\":0.1,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"wait_time\",\"quote\":\"웨이팅 40분\"}]},\"pseudo_rating\":null,\"summary\":\"웨이팅 시간과 직원 친절도에 대한 구체적 언급이 있어 신뢰도가 높은 실방문 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-023",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "성수 구경하다 들어왔어요. 커피는 그냥 그랬어요. 사람이 많아서 오래 못 있었습니다.",
+      "source": "kakao_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.75,
+      "specificity": 0.5,
+      "local_probability": 0.85,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "성수 구경하다 들어왔어요"
+        },
+        {
+          "code": "negative_point",
+          "quote": "사람이 많아서 오래 못 있었습니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2460,
+      "output_tokens": 244,
+      "latency_ms": 8265,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.75,\"specificity\":0.5,\"local_probability\":0.85,\"sentiment\":{\"food\":0.5,\"service\":null,\"price\":null,\"atmosphere\":0.6,\"accessibility\":0.8},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.3,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"성수 구경하다 들어왔어요\"},{\"code\":\"negative_point\",\"quote\":\"사람이 많아서 오래 못 있었습니다\"}]},\"pseudo_rating\":null,\"summary\":\"성수 방문 동기와 혼잡함에 대한 불만이 담긴, 광고 가능성이 낮은 실방문 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-024",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "여행 첫날 왔는데 웨이팅이 길어서 포기할 뻔했어요. 크루아상은 맛있네요. 관광지 가격이에요.",
+      "source": "naver_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.7,
+      "p_eff": 0.195,
+      "authenticity": 0.85,
+      "specificity": 0.75,
+      "local_probability": 0.3,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "wait_time",
+          "quote": "웨이팅이 길어서 포기할 뻔했어요"
+        },
+        {
+          "code": "negative_point",
+          "quote": "웨이팅이 길어서 포기할 뻔했어요"
+        },
+        {
+          "code": "price_detail",
+          "quote": "관광지 가격이에요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2470,
+      "output_tokens": 281,
+      "latency_ms": 8515,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.7,\"authenticity\":0.85,\"specificity\":0.75,\"local_probability\":0.3,\"sentiment\":{\"food\":0.8,\"service\":0.4,\"price\":0.3,\"atmosphere\":0.5,\"accessibility\":0.3},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":true,\"menu_specificity\":0.6,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"wait_time\",\"quote\":\"웨이팅이 길어서 포기할 뻔했어요\"},{\"code\":\"negative_point\",\"quote\":\"웨이팅이 길어서 포기할 뻔했어요\"},{\"code\":\"price_detail\",\"quote\":\"관광지 가격이에요\"}]},\"pseudo_rating\":null,\"summary\":\"웨이팅과 가격에 대한 부정적 언급이 포함된 구체적인 방문 경험을 담고 있다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-025",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "지도 앱 평점 보고 왔는데 솔직히 애매해요. 사진은 잘 나오는데 커피가 평범합니다.",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.75,
+      "specificity": 0.4,
+      "local_probability": 0.3,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "negative_point",
+          "quote": "커피가 평범합니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2457,
+      "output_tokens": 210,
+      "latency_ms": 6044,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.75,\"specificity\":0.4,\"local_probability\":0.3,\"sentiment\":{\"food\":0.5,\"service\":null,\"price\":null,\"atmosphere\":0.5,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.3,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"negative_point\",\"quote\":\"커피가 평범합니다\"}]},\"pseudo_rating\":null,\"summary\":\"긍정적이지만 부정적 의견도 있는 중립적 리뷰로, 광고 가능성은 낮다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-026",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "유튜브 보고 왔어요! 크루아상 맛집 맞네요. 웨이팅 40분은 각오하셔야 해요. 성수 카페투어 필수 코스!",
+      "source": "naver_map",
+      "rating": 5.0,
+      "ground_truth_ad": "ambiguous",
+      "ground_truth_manipulation": null,
+      "dataset": "challenge",
+      "label_reason": "SNS 바이럴 반응형 — 유튜브 보고 방문했다는 것 자체는 광고가 아니나, 바이럴 캠페인의 일부일 가능성 배제 불가",
+      "ad_probability": 0.75,
+      "ad_confidence": 0.8,
+      "p_eff": 0.66,
+      "authenticity": 0.4,
+      "specificity": 0.5,
+      "local_probability": 0.53,
+      "ad_signals": [
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "크루아상 맛집 맞네요"
+        },
+        {
+          "code": "cta_outlink",
+          "quote": "성수 카페투어 필수 코스!"
+        }
+      ],
+      "authentic_signals": [
+        {
+          "code": "wait_time",
+          "quote": "웨이팅 40분은 각오하셔야 해요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2476,
+      "output_tokens": 277,
+      "latency_ms": 8595,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.75,\"ad_confidence\":0.8,\"authenticity\":0.4,\"specificity\":0.5,\"local_probability\":0.6,\"sentiment\":{\"food\":0.95,\"service\":null,\"price\":null,\"atmosphere\":0.8,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":true,\"menu_specificity\":0.3,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[{\"code\":\"marketing_usp_repeat\",\"quote\":\"크루아상 맛집 맞네요\"},{\"code\":\"cta_outlink\",\"quote\":\"성수 카페투어 필수 코스!\"}],\"authentic_signals\":[{\"code\":\"wait_time\",\"quote\":\"웨이팅 40분은 각오하셔야 해요\"}]},\"pseudo_rating\":null,\"summary\":\"유튜브 채널 언급과 '필수 코스' 같은 마케팅 문구가 포함되어 광고 가능성이 있다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-027",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "인스타에서 보고 왔는데 실물이 더 예뻐요. 라떼도 예쁘고 인테리어가 진짜 감성입니다. 사진 찍기 좋아요.",
+      "source": "kakao_map",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "SNS 보고 방문 — 일반 관광객 반응",
+      "ad_probability": 0.4,
+      "ad_confidence": 0.6,
+      "p_eff": 0.36,
+      "authenticity": 0.5,
+      "specificity": 0.3,
+      "local_probability": 0.3,
+      "ad_signals": [
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "인스타에서 보고 왔는데 실물이 더 예뻐요. 라떼도 예쁘고 인테리어가 진짜 감성입니다. 사진 찍기 좋아요."
+        }
+      ],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2472,
+      "output_tokens": 252,
+      "latency_ms": 7801,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.4,\"ad_confidence\":0.6,\"authenticity\":0.5,\"specificity\":0.3,\"local_probability\":0.3,\"sentiment\":{\"food\":0.7,\"service\":null,\"price\":null,\"atmosphere\":0.9,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.2,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[{\"code\":\"marketing_usp_repeat\",\"quote\":\"인스타에서 보고 왔는데 실물이 더 예뻐요. 라떼도 예쁘고 인테리어가 진짜 감성입니다. 사진 찍기 좋아요.\"}],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"인스타와 시각적 매력에 초점을 맞춘 리뷰로, 광고 가능성이 있다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-028",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "요즘 SNS에서 제일 핫한 곳이죠. 브런치 플레이트 비주얼이 정말 좋아요. 데이트로 강추합니다!",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "SNS 바이럴 반응 — 광고 근거 없음",
+      "ad_probability": 0.65,
+      "ad_confidence": 0.7,
+      "p_eff": 0.545,
+      "authenticity": 0.4,
+      "specificity": 0.3,
+      "local_probability": 0.2,
+      "ad_signals": [
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "요즘 SNS에서 제일 핫한 곳이죠"
+        },
+        {
+          "code": "cta_outlink",
+          "quote": "데이트로 강추합니다"
+        }
+      ],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2466,
+      "output_tokens": 238,
+      "latency_ms": 7246,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.65,\"ad_confidence\":0.7,\"authenticity\":0.4,\"specificity\":0.3,\"local_probability\":0.2,\"sentiment\":{\"food\":0.7,\"service\":null,\"price\":null,\"atmosphere\":0.8,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.2,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[{\"code\":\"marketing_usp_repeat\",\"quote\":\"요즘 SNS에서 제일 핫한 곳이죠\"},{\"code\":\"cta_outlink\",\"quote\":\"데이트로 강추합니다\"}],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"SNS 인기도와 데이트 추천이 포함되어 프로모션성 패턴일 가능성이 있다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-029",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "SNS 보고 왔는데 실망. 파스타는 학식 수준. 관광객이 너무 많아요.",
+      "source": "naver_map",
+      "rating": 3.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.85,
+      "specificity": 0.6,
+      "local_probability": 0.3,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "negative_point",
+          "quote": "SNS 보고 왔는데 실망. 파스타는 학식 수준. 관광객이 너무 많아요."
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2453,
+      "output_tokens": 240,
+      "latency_ms": 7539,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.85,\"specificity\":0.6,\"local_probability\":0.3,\"sentiment\":{\"food\":0.3,\"service\":null,\"price\":null,\"atmosphere\":0.2,\"accessibility\":0.4},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.7,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"negative_point\",\"quote\":\"SNS 보고 왔는데 실망. 파스타는 학식 수준. 관광객이 너무 많아요.\"}]},\"pseudo_rating\":null,\"summary\":\"SNS 기대와 현실 간의 차이를 구체적으로 언급하며 광고성 패턴과 거리가 멀다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-030",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "성수 카페 투어 마지막 코스로 왔어요. 라떼는 맛있었어요. 또 올지는 모르겠어요.",
+      "source": "kakao_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.7,
+      "specificity": 0.5,
+      "local_probability": 0.6,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "성수 카페 투어 마지막 코스로 왔어요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2463,
+      "output_tokens": 222,
+      "latency_ms": 9234,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.7,\"specificity\":0.5,\"local_probability\":0.6,\"sentiment\":{\"food\":0.8,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.6,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"성수 카페 투어 마지막 코스로 왔어요\"}]},\"pseudo_rating\":null,\"summary\":\"성수 카페 투어라는 로컬 문맥이 있으나, 내용이 간결해 광고 가능성은 낮다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-031",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "릴스 보고 바로 왔어요. 아침 10시에 오니까 줄 없이 입장했습니다. 커피와 크로플 조합 최고!",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "SNS 보고 방문 — 광고 근거 없음",
+      "ad_probability": 0.4,
+      "ad_confidence": 0.6,
+      "p_eff": 0.36,
+      "authenticity": 0.7,
+      "specificity": 0.6,
+      "local_probability": 0.3,
+      "ad_signals": [
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "릴스 보고 바로 왔어요"
+        }
+      ],
+      "authentic_signals": [
+        {
+          "code": "visit_timing",
+          "quote": "아침 10시에 오니까 줄 없이 입장했습니다"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "커피와 크로플 조합 최고!"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2465,
+      "output_tokens": 275,
+      "latency_ms": 9907,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.4,\"ad_confidence\":0.6,\"authenticity\":0.7,\"specificity\":0.6,\"local_probability\":0.3,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":0.8},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":true,\"menu_specificity\":0.7,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"marketing_usp_repeat\",\"quote\":\"릴스 보고 바로 왔어요\"}],\"authentic_signals\":[{\"code\":\"visit_timing\",\"quote\":\"아침 10시에 오니까 줄 없이 입장했습니다\"},{\"code\":\"specific_menu_eval\",\"quote\":\"커피와 크로플 조합 최고!\"}]},\"pseudo_rating\":null,\"summary\":\"릴스 광고성 접근과 함께 구체적 방문 정보가 혼재되어 광고 가능성이 중간 수준이다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-032",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "주말에 사람 미쳤어요. 빵은 맛있는데 30분 기다렸습니다. 관광객이 많아요.",
+      "source": "naver_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.85,
+      "specificity": 0.75,
+      "local_probability": 0.3,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "wait_time",
+          "quote": "30분 기다렸습니다"
+        },
+        {
+          "code": "negative_point",
+          "quote": "주말에 사람 미쳤어요"
+        },
+        {
+          "code": "visit_timing",
+          "quote": "관광객이 많아요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2458,
+      "output_tokens": 259,
+      "latency_ms": 9042,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.85,\"specificity\":0.75,\"local_probability\":0.3,\"sentiment\":{\"food\":0.8,\"service\":0.4,\"price\":null,\"atmosphere\":0.3,\"accessibility\":0.2},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":true,\"menu_specificity\":0.6,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"wait_time\",\"quote\":\"30분 기다렸습니다\"},{\"code\":\"negative_point\",\"quote\":\"주말에 사람 미쳤어요\"},{\"code\":\"visit_timing\",\"quote\":\"관광객이 많아요\"}]},\"pseudo_rating\":null,\"summary\":\"대기 시간과 혼잡 상황에 대한 구체적 언급이 진성 후기 특징을 보여준다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-033",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "성수동 새로 생긴 카페 다녀왔어요. 분위기 진짜 감성 최고고 파스터리도 맛있어요. 인생샷 건지기 딱 좋은 곳",
+      "source": "naver_blog",
+      "rating": null,
+      "ground_truth_ad": "ambiguous",
+      "ground_truth_manipulation": "suspicious",
+      "dataset": "challenge",
+      "label_reason": "유사 문구가 서로 다른 리뷰어로 3개 반복 — 조작 의심. 광고 여부는 근거 불충분",
+      "ad_probability": 0.35,
+      "ad_confidence": 0.6,
+      "p_eff": 0.33,
+      "authenticity": 0.65,
+      "specificity": 0.3,
+      "local_probability": 0.7,
+      "ad_signals": [
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "분위기 진짜 감성 최고고 파스터리도 맛있어요. 인생샷 건지기 딱 좋은 곳!"
+        }
+      ],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "성수동 새로 생긴 카페 다녀왔어요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2477,
+      "output_tokens": 283,
+      "latency_ms": 12587,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.35,\"ad_confidence\":0.6,\"authenticity\":0.65,\"specificity\":0.3,\"local_probability\":0.7,\"sentiment\":{\"food\":0.8,\"service\":null,\"price\":null,\"atmosphere\":0.95,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.4,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"marketing_usp_repeat\",\"quote\":\"분위기 진짜 감성 최고고 파스터리도 맛있어요. 인생샷 건지기 딱 좋은 곳!\"}],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"성수동 새로 생긴 카페 다녀왔어요\"}]},\"pseudo_rating\":4.5,\"summary\":\"감성 최고, 인생샷 등 반복적 마케팅 문구가 있으나 로컬 문맥이 있어 광고 가능성은 중간 수준이다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-034",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "성수동 새로 생긴 카페 다녀왔어요. 분위기 너무 감성 최고고 파스터리도 맛있어요. 인생샷 건지기 좋은 곳! ",
+      "source": "naver_blog",
+      "rating": null,
+      "ground_truth_ad": "ambiguous",
+      "ground_truth_manipulation": "suspicious",
+      "dataset": "challenge",
+      "label_reason": "위와 유사 문구 (2글자만 다름)",
+      "ad_probability": 0.35,
+      "ad_confidence": 0.5,
+      "p_eff": 0.325,
+      "authenticity": 0.65,
+      "specificity": 0.3,
+      "local_probability": 0.56,
+      "ad_signals": [
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "인생샷 건지기 좋은 곳! 강추해요"
+        }
+      ],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2475,
+      "output_tokens": 232,
+      "latency_ms": 8305,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.35,\"ad_confidence\":0.5,\"authenticity\":0.65,\"specificity\":0.3,\"local_probability\":0.7,\"sentiment\":{\"food\":0.8,\"service\":null,\"price\":null,\"atmosphere\":0.95,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.4,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"marketing_usp_repeat\",\"quote\":\"인생샷 건지기 좋은 곳! 강추해요\"}],\"authentic_signals\":[]},\"pseudo_rating\":4.5,\"summary\":\"감성적 표현과 인생샷 강조가 프로모션성 패턴을 암시하지만, 구체성 부족으로 확신은 낮다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-035",
+      "restaurant": "성수동브런치카페 루미에르",
+      "short_text": "성수동 새로 생긴 카페 다녀왔습니다. 분위기 진짜 감성 최고구 파스터리도 맛있어요. 인생샷 건지기 딱 좋은 ",
+      "source": "naver_blog",
+      "rating": null,
+      "ground_truth_ad": "ambiguous",
+      "ground_truth_manipulation": "suspicious",
+      "dataset": "challenge",
+      "label_reason": "위와 유사 문구 (어미만 다름)",
+      "ad_probability": 0.35,
+      "ad_confidence": 0.6,
+      "p_eff": 0.33,
+      "authenticity": 0.5,
+      "specificity": 0.3,
+      "local_probability": 0.7,
+      "ad_signals": [
+        {
+          "code": "marketing_usp_repeat",
+          "quote": "분위기 진짜 감성 최고구"
+        }
+      ],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "성수동 새로 생긴 카페 다녀왔습니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2475,
+      "output_tokens": 250,
+      "latency_ms": 17785,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.35,\"ad_confidence\":0.6,\"authenticity\":0.5,\"specificity\":0.3,\"local_probability\":0.7,\"sentiment\":{\"food\":0.8,\"service\":null,\"price\":null,\"atmosphere\":0.9,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.4,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"marketing_usp_repeat\",\"quote\":\"분위기 진짜 감성 최고구\"}],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"성수동 새로 생긴 카페 다녀왔습니다\"}]},\"pseudo_rating\":4.5,\"summary\":\"감성 최고 같은 마케팅 문구와 인생샷 같은 SNS 용어가 광고 가능성을 높인다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-036",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "직장 다니면서 이번이 네 번째 방문이에요. 물냉면 육수가 늘 시원해요. 점심시간엔 직장인이 가득 차요.",
+      "source": "naver_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.95,
+      "specificity": 0.75,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "이번이 네 번째 방문이에요"
+        },
+        {
+          "code": "local_context",
+          "quote": "직장 다니면서"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "물냉면 육수가 늘 시원해요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2470,
+      "output_tokens": 261,
+      "latency_ms": 10452,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.95,\"specificity\":0.75,\"local_probability\":0.95,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":0.7},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.8,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"이번이 네 번째 방문이에요\"},{\"code\":\"local_context\",\"quote\":\"직장 다니면서\"},{\"code\":\"specific_menu_eval\",\"quote\":\"물냉면 육수가 늘 시원해요\"}]},\"pseudo_rating\":null,\"summary\":\"재방문과 로컬 문맥, 구체적인 메뉴 평가가 포함된 신뢰도 높은 실방문 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-037",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "1980년대부터 다니던 곳. 냉면 맛이 예전 그대로예요. 사장님도 그대로시고.",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.95,
+      "specificity": 0.7,
+      "local_probability": 0.62,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "1980년대부터 다니던 곳"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "냉면 맛이 예전 그대로예요"
+        },
+        {
+          "code": "long_term_patron",
+          "quote": "1980년대부터 다니던 곳. 냉면 맛이 예전 그대로예요. 사장님도 그대로시고."
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2456,
+      "output_tokens": 286,
+      "latency_ms": 10164,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.95,\"specificity\":0.7,\"local_probability\":0.9,\"sentiment\":{\"food\":0.9,\"service\":0.8,\"price\":null,\"atmosphere\":0.7,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.8,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"1980년대부터 다니던 곳\"},{\"code\":\"specific_menu_eval\",\"quote\":\"냉면 맛이 예전 그대로예요\"},{\"code\":\"long_term_patron\",\"quote\":\"1980년대부터 다니던 곳. 냉면 맛이 예전 그대로예요. 사장님도 그대로시고.\"}]},\"pseudo_rating\":null,\"summary\":\"장기간 단골 방문과 구체적 메뉴 평가가 담긴 진성 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-038",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "어릴 때 아빠랑 왔던 집인데 20년이 넘도록 맛이 그대로네요. 양지냉면 추천합니다.",
+      "source": "naver_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "p_eff": 0.14,
+      "authenticity": 0.95,
+      "specificity": 0.7,
+      "local_probability": 0.605,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "어릴 때 아빠랑 왔던 집인데 20년이 넘도록 맛이 그대로네요"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "양지냉면 추천합니다"
+        },
+        {
+          "code": "long_term_patron",
+          "quote": "20년이 넘도록 맛이 그대로네요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2462,
+      "output_tokens": 278,
+      "latency_ms": 10217,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.95,\"specificity\":0.7,\"local_probability\":0.85,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":0.8,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.9,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"어릴 때 아빠랑 왔던 집인데 20년이 넘도록 맛이 그대로네요\"},{\"code\":\"specific_menu_eval\",\"quote\":\"양지냉면 추천합니다\"},{\"code\":\"long_term_patron\",\"quote\":\"20년이 넘도록 맛이 그대로네요\"}]},\"pseudo_rating\":null,\"summary\":\"장기간의 충성도와 구체적인 메뉴 추천이 담긴 진성 리뷰.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-039",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "30년 노포입니다. 메뉴는 냉면 하나뿐인데 그게 오히려 좋아요. 계산은 현금으로.",
+      "source": "kakao_map",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.9,
+      "specificity": 0.85,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "30년 노포입니다"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "메뉴는 냉면 하나뿐인데 그게 오히려 좋아요"
+        },
+        {
+          "code": "price_detail",
+          "quote": "계산은 현금으로"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2459,
+      "output_tokens": 262,
+      "latency_ms": 12683,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.9,\"specificity\":0.85,\"local_probability\":0.95,\"sentiment\":{\"food\":0.95,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.9,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"30년 노포입니다\"},{\"code\":\"specific_menu_eval\",\"quote\":\"메뉴는 냉면 하나뿐인데 그게 오히려 좋아요\"},{\"code\":\"price_detail\",\"quote\":\"계산은 현금으로\"}]},\"pseudo_rating\":null,\"summary\":\"30년 노포라는 로컬 문맥과 구체적인 메뉴, 결제 방식 언급이 진성 후기 특징이다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-040",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "부모님 모시고 왔는데 옛날 맛 그대로라고 하세요. 만두도 옛날 맛이에요.",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.75,
+      "specificity": 0.65,
+      "local_probability": 0.56,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "specific_menu_eval",
+          "quote": "만두도 옛날 맛이에요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2452,
+      "output_tokens": 209,
+      "latency_ms": 8630,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.75,\"specificity\":0.65,\"local_probability\":0.7,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":0.8,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.7,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"specific_menu_eval\",\"quote\":\"만두도 옛날 맛이에요\"}]},\"pseudo_rating\":null,\"summary\":\"가족과 함께한 방문과 구체적인 메뉴 평가가 진성 후기 가능성을 높인다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-041",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "출퇴근길 아저씨들로 항상 만석이에요. 냉면에 밥 추가가 기본 세트입니다.",
+      "source": "naver_map",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.85,
+      "specificity": 0.75,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "출퇴근길 아저씨들로 항상 만석이에요"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "냉면에 밥 추가가 기본 세트입니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2457,
+      "output_tokens": 258,
+      "latency_ms": 19742,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.85,\"specificity\":0.75,\"local_probability\":0.95,\"sentiment\":{\"food\":0.8,\"service\":null,\"price\":null,\"atmosphere\":0.7,\"accessibility\":0.9},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.8,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"출퇴근길 아저씨들로 항상 만석이에요\"},{\"code\":\"specific_menu_eval\",\"quote\":\"냉면에 밥 추가가 기본 세트입니다\"}]},\"pseudo_rating\":null,\"summary\":\"출퇴근길 이용객과 메뉴 구체적 묘사가 담긴 현지인 스타일의 리뷰.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-042",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "냉면 맛은 좋은데 웨이팅이 있어요. 관광객도 요즘 많아진 것 같아요.",
+      "source": "kakao_map",
+      "rating": 3.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.85,
+      "specificity": 0.7,
+      "local_probability": 0.53,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "specific_menu_eval",
+          "quote": "냉면 맛은 좋은데"
+        },
+        {
+          "code": "negative_point",
+          "quote": "웨이팅이 있어요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2457,
+      "output_tokens": 240,
+      "latency_ms": 10921,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.85,\"specificity\":0.7,\"local_probability\":0.6,\"sentiment\":{\"food\":0.7,\"service\":0.4,\"price\":null,\"atmosphere\":0.5,\"accessibility\":0.3},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":true,\"menu_specificity\":0.8,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"specific_menu_eval\",\"quote\":\"냉면 맛은 좋은데\"},{\"code\":\"negative_point\",\"quote\":\"웨이팅이 있어요\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 메뉴 평가와 단점 언급이 있어 신뢰도가 높은 실방문 후기로 보입니다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-043",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "이 동네 원조예요. 새벽에도 열어서 해장하기 좋아요. 단골 아저씨들만 오는 곳.",
+      "source": "naver_map",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.7,
+      "p_eff": 0.195,
+      "authenticity": 0.85,
+      "specificity": 0.6,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "local_context",
+          "quote": "이 동네 원조예요"
+        },
+        {
+          "code": "repeat_visit",
+          "quote": "단골 아저씨들만 오는 곳"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2458,
+      "output_tokens": 227,
+      "latency_ms": 25647,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.7,\"authenticity\":0.85,\"specificity\":0.6,\"local_probability\":0.95,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":0.8,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.3,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"local_context\",\"quote\":\"이 동네 원조예요\"},{\"code\":\"repeat_visit\",\"quote\":\"단골 아저씨들만 오는 곳\"}]},\"pseudo_rating\":null,\"summary\":\"로컬 문맥과 단골 언급이 진성 후기 가능성을 높인다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-044",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "동네에서 몇 년째 가는 단골집. 김치찜은 여기가 최고예요. 주차장이 좁은 게 흠.",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.9,
+      "p_eff": 0.12,
+      "authenticity": 0.95,
+      "specificity": 0.85,
+      "local_probability": 0.95,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "동네에서 몇 년째 가는 단골집"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "김치찜은 여기가 최고예요"
+        },
+        {
+          "code": "negative_point",
+          "quote": "주차장이 좁은 게 흠"
+        },
+        {
+          "code": "local_context",
+          "quote": "동네에서 몇 년째 가는 단골집"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2459,
+      "output_tokens": 294,
+      "latency_ms": 11628,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.9,\"authenticity\":0.95,\"specificity\":0.85,\"local_probability\":0.95,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":0.7,\"accessibility\":0.5},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.9,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"동네에서 몇 년째 가는 단골집\"},{\"code\":\"specific_menu_eval\",\"quote\":\"김치찜은 여기가 최고예요\"},{\"code\":\"negative_point\",\"quote\":\"주차장이 좁은 게 흠\"},{\"code\":\"local_context\",\"quote\":\"동네에서 몇 년째 가는 단골집\"}]},\"pseudo_rating\":null,\"summary\":\"장기간 단골이며 구체적인 메뉴 평가와 단점을 언급해 신뢰도가 높다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-045",
+      "restaurant": "을지로3가평양냉면",
+      "short_text": "미디움은 없고 냉면뿐인데 가격이 생각보다 비싸요. 맛은 있습니만.",
+      "source": "naver_map",
+      "rating": 2.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.85,
+      "specificity": 0.75,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "specific_menu_eval",
+          "quote": "미디움은 없고 냉면뿐인데"
+        },
+        {
+          "code": "negative_point",
+          "quote": "가격이 생각보다 비싸요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2455,
+      "output_tokens": 239,
+      "latency_ms": 9224,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.85,\"specificity\":0.75,\"local_probability\":0.5,\"sentiment\":{\"food\":0.6,\"service\":null,\"price\":0.2,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.8,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"specific_menu_eval\",\"quote\":\"미디움은 없고 냉면뿐인데\"},{\"code\":\"negative_point\",\"quote\":\"가격이 생각보다 비싸요\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 메뉴 평가와 가격에 대한 불만족을 표현한 신뢰도 높은 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-046",
+      "restaurant": "강남구역스테이크",
+      "short_text": "스테이크 완전 맛있어요! 또 올게요",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.5,
+      "p_eff": 0.225,
+      "authenticity": 0.65,
+      "specificity": 0.3,
+      "local_probability": 0.4,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "또 올게요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2437,
+      "output_tokens": 204,
+      "latency_ms": 13899,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.5,\"authenticity\":0.65,\"specificity\":0.3,\"local_probability\":0.4,\"sentiment\":{\"food\":0.95,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.5,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"또 올게요\"}]},\"pseudo_rating\":null,\"summary\":\"간결하지만 재방문 의사 표현으로 광고 가능성은 낮고 신뢰도는 중간 수준이다.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-047",
+      "restaurant": "강남구역스테이크",
+      "short_text": "고기 퀄리티 최고예요",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.5,
+      "p_eff": 0.4,
+      "authenticity": 0.5,
+      "specificity": 0.1,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2431,
+      "output_tokens": 201,
+      "latency_ms": 27353,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.5,\"ad_confidence\":0.5,\"authenticity\":0.5,\"specificity\":0.1,\"local_probability\":0.5,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.2,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"극도로 간결하고 긍정적이나, 구체성과 맥락이 부족해 광고 가능성과 진정성을 판단하기 어렵다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-048",
+      "restaurant": "강남구역스테이크",
+      "short_text": "기념일에 딱인 곳. 좋았어요",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.3,
+      "ad_confidence": 0.4,
+      "p_eff": 0.3,
+      "authenticity": 0.5,
+      "specificity": 0.1,
+      "local_probability": 0.4,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2434,
+      "output_tokens": 194,
+      "latency_ms": 6870,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.3,\"ad_confidence\":0.4,\"authenticity\":0.5,\"specificity\":0.1,\"local_probability\":0.4,\"sentiment\":{\"food\":0.7,\"service\":null,\"price\":null,\"atmosphere\":0.8,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.1,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"방문 동기와 긍정적 평가만 있을 뿐, 구체성과 신호 부족으로 광고 가능성이 낮다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-049",
+      "restaurant": "강남구역스테이크",
+      "short_text": "부드럽고 맛있어요. 추천합니다",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.3,
+      "ad_confidence": 0.4,
+      "p_eff": 0.3,
+      "authenticity": 0.5,
+      "specificity": 0.15,
+      "local_probability": 0.3,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2433,
+      "output_tokens": 201,
+      "latency_ms": 12910,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.3,\"ad_confidence\":0.4,\"authenticity\":0.5,\"specificity\":0.15,\"local_probability\":0.3,\"sentiment\":{\"food\":0.9,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.2,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"매우 짧은 길이로 인해 구체적인 판단 근거가 부족하며, 광고 가능성과 진성 리뷰 신호 모두 미미하다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-050",
+      "restaurant": "강남구역스테이크",
+      "short_text": "서비스도 좋고 고기도 좋아요",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.3,
+      "p_eff": 0.36,
+      "authenticity": 0.5,
+      "specificity": 0.1,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2430,
+      "output_tokens": 192,
+      "latency_ms": 9173,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.5,\"ad_confidence\":0.3,\"authenticity\":0.5,\"specificity\":0.1,\"local_probability\":0.5,\"sentiment\":{\"food\":0.8,\"service\":0.8,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.1,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"매우 짧은 길이로 인해 광고 가능성과 진성 여부를 판단할 근거가 부족하다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-051",
+      "restaurant": "강남구역스테이크",
+      "short_text": "데이트 코스로 완벽해요",
+      "source": "google_places",
+      "rating": 5.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.3,
+      "ad_confidence": 0.4,
+      "p_eff": 0.3,
+      "authenticity": 0.4,
+      "specificity": 0.1,
+      "local_probability": 0.3,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2431,
+      "output_tokens": 194,
+      "latency_ms": 8058,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.3,\"ad_confidence\":0.4,\"authenticity\":0.4,\"specificity\":0.1,\"local_probability\":0.3,\"sentiment\":{\"food\":null,\"service\":null,\"price\":null,\"atmosphere\":0.9,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.0,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"매우 짧은 길이로 인해 구체적인 분석이 불가능하며, 광고 가능성과 진성 여부 모두 중립적이다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-052",
+      "restaurant": "강남구역스테이크",
+      "short_text": "가격 대비 만족스러워요",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.5,
+      "p_eff": 0.4,
+      "authenticity": 0.5,
+      "specificity": 0.1,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2429,
+      "output_tokens": 185,
+      "latency_ms": 7161,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.5,\"ad_confidence\":0.5,\"authenticity\":0.5,\"specificity\":0.1,\"local_probability\":0.5,\"sentiment\":{\"food\":null,\"service\":null,\"price\":0.8,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.1,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[]},\"pseudo_rating\":null,\"summary\":\"가격 만족도만 언급되어 정보가 부족하여 광고 가능성을 판단하기 어렵다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-053",
+      "restaurant": "강남구역스테이크",
+      "short_text": "웨이팅 있어도 갈 만해요",
+      "source": "google_places",
+      "rating": 4.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "p_eff": 0.21,
+      "authenticity": 0.75,
+      "specificity": 0.15,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "wait_time",
+          "quote": "웨이팅 있어도 갈 만해요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2432,
+      "output_tokens": 219,
+      "latency_ms": 8349,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.15,\"ad_confidence\":0.6,\"authenticity\":0.75,\"specificity\":0.15,\"local_probability\":0.5,\"sentiment\":{\"food\":0.8,\"service\":null,\"price\":null,\"atmosphere\":null,\"accessibility\":0.7},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":true,\"menu_specificity\":0.1,\"negative_points_present\":null},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"wait_time\",\"quote\":\"웨이팅 있어도 갈 만해요\"}]},\"pseudo_rating\":null,\"summary\":\"웨이팅 언급이 있으나 정보가 부족해 광고 가능성은 낮고 진성 여부는 불확실하다.\",\"flags\":{\"insufficient_text\":true}}"
+    },
+    {
+      "review_id": "gold-054",
+      "restaurant": "강남구역스테이크",
+      "short_text": "3년 전보다 퀄리티가 떨어진 느낌. 스테이크는 괜찮은데 사이드가 식어서 나왔고, 직원 교체가 덜 됐는지 서비",
+      "source": "naver_map",
+      "rating": 2.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.05,
+      "ad_confidence": 0.9,
+      "p_eff": 0.075,
+      "authenticity": 0.95,
+      "specificity": 0.85,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "3년 전보다 퀄리티가 떨어진 느낌"
+        },
+        {
+          "code": "specific_menu_eval",
+          "quote": "스테이크는 괜찮은데 사이드가 식어서 나왔고"
+        },
+        {
+          "code": "negative_point",
+          "quote": "직원 교체가 덜 됐는지 서비스가 아쉬워요. 가격 대비 만족도 낮습니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2499,
+      "output_tokens": 309,
+      "latency_ms": 12026,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.05,\"ad_confidence\":0.9,\"authenticity\":0.95,\"specificity\":0.85,\"local_probability\":0.5,\"sentiment\":{\"food\":0.4,\"service\":0.3,\"price\":0.2,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.8,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"3년 전보다 퀄리티가 떨어진 느낌\"},{\"code\":\"specific_menu_eval\",\"quote\":\"스테이크는 괜찮은데 사이드가 식어서 나왔고\"},{\"code\":\"negative_point\",\"quote\":\"직원 교체가 덜 됐는지 서비스가 아쉬워요. 가격 대비 만족도 낮습니다\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 메뉴 평가와 단점, 장기간 방문 경험을 담은 신뢰도 높은 부정적 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-055",
+      "restaurant": "강남구역스테이크",
+      "short_text": "웨이팅 40분. 파스타는 솔직히 평범하고 홀 직원이 테이블 관리를 못 해요. 리뷰와 다르게 실망했습니다.",
+      "source": "naver_map",
+      "rating": 2.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.95,
+      "specificity": 0.75,
+      "local_probability": 0.4,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "wait_time",
+          "quote": "웨이팅 40분"
+        },
+        {
+          "code": "negative_point",
+          "quote": "파스타는 솔직히 평범하고 홀 직원이 테이블 관리를 못 해요. 리뷰와 다르게 실망했습니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2472,
+      "output_tokens": 269,
+      "latency_ms": 9839,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.95,\"specificity\":0.75,\"local_probability\":0.4,\"sentiment\":{\"food\":0.3,\"service\":0.2,\"price\":null,\"atmosphere\":0.3,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":true,\"menu_specificity\":0.6,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"wait_time\",\"quote\":\"웨이팅 40분\"},{\"code\":\"negative_point\",\"quote\":\"파스타는 솔직히 평범하고 홀 직원이 테이블 관리를 못 해요. 리뷰와 다르게 실망했습니다\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 대기 시간과 서비스/메뉴에 대한 부정적 평가가 포함된 신뢰도 높은 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-056",
+      "restaurant": "강남구역스테이크",
+      "short_text": "미디움 주문했는데 레어로 나왔어요. 재조리 요청에 20분 대기했습니다. 맛은 괜찮지만 프로세스가 아쉬워요.",
+      "source": "naver_map",
+      "rating": 3.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.95,
+      "specificity": 0.9,
+      "local_probability": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "specific_menu_eval",
+          "quote": "미디움 주문했는데 레어로 나왔어요"
+        },
+        {
+          "code": "wait_time",
+          "quote": "재조리 요청에 20분 대기했습니다"
+        },
+        {
+          "code": "negative_point",
+          "quote": "맛은 괜찮지만 프로세스가 아쉬워요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2473,
+      "output_tokens": 281,
+      "latency_ms": 11041,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.95,\"specificity\":0.9,\"local_probability\":0.5,\"sentiment\":{\"food\":0.6,\"service\":0.3,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":true,\"menu_specificity\":0.8,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"specific_menu_eval\",\"quote\":\"미디움 주문했는데 레어로 나왔어요\"},{\"code\":\"wait_time\",\"quote\":\"재조리 요청에 20분 대기했습니다\"},{\"code\":\"negative_point\",\"quote\":\"맛은 괜찮지만 프로세스가 아쉬워요\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 메뉴 평가와 대기 시간, 서비스 아쉬움을 언급한 신뢰도 높은 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-057",
+      "restaurant": "강남구역스테이크",
+      "short_text": "접객 교육이 필요해요. 물도 안 채워주고 계산까지 15분 기다렸습니다. 스테이크 맛 하나로는 부족해요.",
+      "source": "naver_map",
+      "rating": 3.0,
+      "ground_truth_ad": "normal",
+      "ground_truth_manipulation": null,
+      "dataset": "natural",
+      "label_reason": "",
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "p_eff": 0.16,
+      "authenticity": 0.95,
+      "specificity": 0.85,
+      "local_probability": 0.3,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "negative_point",
+          "quote": "접객 교육이 필요해요. 물도 안 채워주고 계산까지 15분 기다렸습니다. 스테이크 맛 하나로는 부족해요."
+        },
+        {
+          "code": "wait_time",
+          "quote": "계산까지 15분 기다렸습니다"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2466,
+      "output_tokens": 266,
+      "latency_ms": 10297,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.1,\"ad_confidence\":0.7,\"authenticity\":0.95,\"specificity\":0.85,\"local_probability\":0.3,\"sentiment\":{\"food\":0.4,\"service\":0.2,\"price\":null,\"atmosphere\":null,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":true,\"menu_specificity\":0.7,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"negative_point\",\"quote\":\"접객 교육이 필요해요. 물도 안 채워주고 계산까지 15분 기다렸습니다. 스테이크 맛 하나로는 부족해요.\"},{\"code\":\"wait_time\",\"quote\":\"계산까지 15분 기다렸습니다\"}]},\"pseudo_rating\":null,\"summary\":\"서비스와 맛에 대한 구체적인 불만족을 표현한 신뢰도 높은 후기.\",\"flags\":{\"insufficient_text\":false}}"
+    },
+    {
+      "review_id": "gold-058",
+      "restaurant": "강남구역스테이크",
+      "short_text": "강남 최고의 스테이크 하우스를 찾아서 다녀왔습니다. 1++ 한우와 직화 그릴이 자랑입니다. 위치는 강남역 4",
+      "source": "naver_blog",
+      "rating": null,
+      "ground_truth_ad": "likely_ad",
+      "ground_truth_manipulation": null,
+      "dataset": "challenge",
+      "label_reason": "카탈로그형 블로그: 1++한우 USP + 발렛 + 예약안내 + 코스가격 + 전 항목 최고",
+      "ad_probability": 0.92,
+      "ad_confidence": 0.85,
+      "p_eff": 0.827,
+      "authenticity": 0.15,
+      "specificity": 0.6,
+      "local_probability": 0.2,
+      "ad_signals": [
+        {
+          "code": "catalog_listing",
+          "quote": "위치는 강남역 4번 출구 도보 5분, 발렛 파킹 가능합니다. 영업시간 점심 11:30~14:30, 저녁 17:30~22:00"
+        },
+        {
+          "code": "all_positive_no_drawback",
+          "quote": "맛 최고 서비스 최고 분위기 최고!"
+        },
+        {
+          "code": "cta_outlink",
+          "quote": "예약은 인스타 DM 또는 전화로 가능합니다"
+        }
+      ],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "validation_errors": [],
+      "input_tokens": 2564,
+      "output_tokens": 335,
+      "latency_ms": 32930,
+      "finish_reason": "stop",
+      "raw_response": "{\"ad_probability\":0.92,\"ad_confidence\":0.85,\"authenticity\":0.15,\"specificity\":0.6,\"local_probability\":0.2,\"sentiment\":{\"food\":1.0,\"service\":1.0,\"price\":0.9,\"atmosphere\":1.0,\"accessibility\":0.9},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.5,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"catalog_listing\",\"quote\":\"위치는 강남역 4번 출구 도보 5분, 발렛 파킹 가능합니다. 영업시간 점심 11:30~14:30, 저녁 17:30~22:00\"},{\"code\":\"all_positive_no_drawback\",\"quote\":\"맛 최고 서비스 최고 분위기 최고!\"},{\"code\":\"cta_outlink\",\"quote\":\"예약은 인스타 DM 또는 전화로 가능합니다\"}],\"authentic_signals\":[]},\"pseudo_rating\":4.8,\"summary\":\"카탈로그식 정보 나열과 전 항목 칭찬, 예약 유도가 포함되어 프로모션성 패턴일 가능성이 매우 높다.\",\"flags\":{\"insufficient_text\":false}}"
+    }
+  ]
+}

@@ -1,0 +1,964 @@
+{
+  "run_id": "canary-baseline-v1",
+  "model": "glm-4.5-flash",
+  "prompt_version": "review-analysis-v1",
+  "timestamp": "2026-08-15T08:18:50.817452",
+  "tokens_input": 71198,
+  "tokens_output": 25917,
+  "calls": 29,
+  "results": [
+    {
+      "id": "canary-01",
+      "category": "확실한 일반",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 62199,
+      "match": "✗"
+    },
+    {
+      "id": "canary-02",
+      "category": "확실한 일반",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 81665,
+      "match": "✗"
+    },
+    {
+      "id": "canary-03",
+      "category": "확실한 일반",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.5,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.1,
+      "ad_signals": [],
+      "authentic_signals": [
+        {
+          "code": "repeat_visit",
+          "quote": "또 올게요"
+        }
+      ],
+      "signals_dropped": 0,
+      "needs_manual": false,
+      "attempts": 1,
+      "latency_ms": 29393,
+      "match": "✗"
+    },
+    {
+      "id": "canary-04",
+      "category": "확실한 일반",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 56935,
+      "match": "✗"
+    },
+    {
+      "id": "canary-05",
+      "category": "확실한 일반",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 67942,
+      "match": "✗"
+    },
+    {
+      "id": "canary-06",
+      "category": "확실한 일반",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 86313,
+      "match": "✗"
+    },
+    {
+      "id": "canary-07",
+      "category": "카탈로그형 광고",
+      "expected": "likely_ad",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 62685,
+      "match": "✓"
+    },
+    {
+      "id": "canary-08",
+      "category": "카탈로그형 광고",
+      "expected": "likely_ad",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 59757,
+      "match": "✓"
+    },
+    {
+      "id": "canary-09",
+      "category": "카탈로그형 광고",
+      "expected": "likely_ad",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 94118,
+      "match": "✓"
+    },
+    {
+      "id": "canary-10",
+      "category": "애매(바이럴)",
+      "expected": "ambiguous",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 80141,
+      "match": "~"
+    },
+    {
+      "id": "canary-11",
+      "category": "애매(바이럴)",
+      "expected": "ambiguous",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 103050,
+      "match": "~"
+    },
+    {
+      "id": "canary-12",
+      "category": "애매(SNS 바이럴)",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 58265,
+      "match": "✗"
+    },
+    {
+      "id": "canary-13",
+      "category": "로컬 재방문",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 89431,
+      "match": "✗"
+    },
+    {
+      "id": "canary-14",
+      "category": "로컬 재방문",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 69302,
+      "match": "✗"
+    },
+    {
+      "id": "canary-15",
+      "category": "로컬 재방문",
+      "expected": "normal",
+      "ad_probability": 0.5,
+      "ad_confidence": 0.0,
+      "local_probability": 0.5,
+      "authenticity": 0.5,
+      "specificity": 0.5,
+      "ad_signals": [],
+      "authentic_signals": [],
+      "signals_dropped": 0,
+      "needs_manual": true,
+      "attempts": 3,
+      "latency_ms": 58984,
+      "match": "✗"
+    }
+  ],
+  "runs_log": [
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-01",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "5392d8440e491ac812e8e4fbbdb8e6408e5c3374e390c7c6dd5e710aed5f37ce",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 62199,
+      "input_tokens": 4861,
+      "output_tokens": 1800,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-02",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "0eced976f76fbf1d1a585245436eb513c72bfe10b393a73bf2d9c2370ff00e1c",
+      "raw_response": "```json\n{\n  \"ad_probability\": 0.",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "invalid JSON: Expecting ',' delimiter: line 1 column 214 (char 213)",
+        "no JSON object in output"
+      ],
+      "latency_ms": 81665,
+      "input_tokens": 9824,
+      "output_tokens": 3600,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-03",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "d54e80a565d5e149f802598e54dc3b56102cd1c66bef5ef47a215b49937389e0",
+      "raw_response": "{\"ad_probability\": 0.5, \"ad_confidence\": 0.5, \"authenticity\": 0.5, \"specificity\": 0.1, \"local_probability\": 0.5, \"sentiment\": {\"food\": 0.8, \"service\": null, \"price\": null, \"atmosphere\": null, \"accessibility\": null}, \"visit_context\": {\"repeat_visit\": true, \"wait_time_mentioned\": false, \"menu_specificity\": 0.1, \"negative_points_present\": false}, \"signals\": {\"ad_signals\": [], \"authentic_signals\": [{\"code\": \"repeat_visit\", \"quote\": \"또 올게요\"}]}, \"pseudo_rating\": null, \"summary\": \"재방문 의사가 있으나 정보 부족으로 광고 가능성 판단이 어렵다.\", \"flags\": {\"insufficient_text\": true}}",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.5,
+        "authenticity": 0.5,
+        "specificity": 0.1,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": 0.8,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": true,
+          "wait_time_mentioned": false,
+          "menu_specificity": 0.1,
+          "negative_points_present": false
+        },
+        "ad_signals": [],
+        "authentic_signals": [
+          {
+            "code": "repeat_visit",
+            "quote": "또 올게요"
+          }
+        ],
+        "pseudo_rating": null,
+        "summary": "재방문 의사가 있으나 정보 부족으로 광고 가능성 판단이 어렵다.",
+        "flags": {
+          "insufficient_text": true
+        }
+      },
+      "validation_errors": [],
+      "latency_ms": 29393,
+      "input_tokens": 12185,
+      "output_tokens": 4317,
+      "attempts": 1
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-04",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "4d4cc1b8fa7bffda1a640402ac1f8c942e9073f41a6f34eb2b2974af0e24eebd",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 56935,
+      "input_tokens": 17026,
+      "output_tokens": 6117,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-05",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "aa9404bd6c5ad1b887ef32ad905d2a913d19d6cc17559e87aedc4c6a5af6f9fd",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "invalid JSON: Expecting ',' delimiter: line 32 column 4 (char 648)",
+        "no JSON object in output"
+      ],
+      "latency_ms": 67942,
+      "input_tokens": 22117,
+      "output_tokens": 7917,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-06",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "b5ba38a503f05fb667313d424c52fe6742dbde59b988ff0fd0dbd5de7a5edcdb",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 86313,
+      "input_tokens": 26973,
+      "output_tokens": 9717,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-07",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "667dde4c46b43cd1b8169616de3315f96e1e1eea69950fe35b990bc947122ff8",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 62685,
+      "input_tokens": 32000,
+      "output_tokens": 11517,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-08",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "1fc2f88d700740dfb391bc3dfe3ade677ddd7f29b5db0ab1f4b6c206bbb257f0",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 59757,
+      "input_tokens": 37087,
+      "output_tokens": 13317,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-09",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "fdfa57c8d9c1eba6dbd4b9eb0d8a4d9c9fb29c204acf0f4ae275d6e1bb6f4a03",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 94118,
+      "input_tokens": 42122,
+      "output_tokens": 15117,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-10",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "5e8ad3b6e7409a6e2d724019f36f638b905d3c2d013eb6d74f46071ca0acb621",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 80141,
+      "input_tokens": 46983,
+      "output_tokens": 16917,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-11",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "0d581916f4cf57117b9c2345864599b8fa14bb3cd7c44dc32d95793d8f85285d",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 103050,
+      "input_tokens": 51840,
+      "output_tokens": 18717,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-12",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "94a079157dfda132743fbe018777728b27fd6ae8a3123cbe09cc947b5ace9607",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 58265,
+      "input_tokens": 56697,
+      "output_tokens": 20517,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-13",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "547385f3e5dc368e102513724a1fe7230931da19808bfeb52e69476c5d19e4fe",
+      "raw_response": "```json\n{\n  \"ad_probability\": 0.1,\n  \"ad_confidence\": 0.9,\n  \"authenticity\": 0.9,\n  \"specificity\": 0.8,\n  \"local_probability\": 0.9,\n  \"sentiment\": {\n    \"food\": 0.9,\n    \"service\": null,\n    \"price\": null,\n    \"atmosphere\": null,\n    \"accessibility\": null\n  },\n  \"visit_context\": {\n    \"repeat_visit\": true,\n    \"wait_time_ment",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(invalid JSON: Expecting ',' delimiter: line 13 column 4 (char 251)) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "invalid JSON: Expecting ',' delimiter: line 13 column 4 (char 251)"
+      ],
+      "latency_ms": 89431,
+      "input_tokens": 61540,
+      "output_tokens": 22317,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-14",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "3b0c8ca7175b3baf66148a04e95aab8c623d3b68b1c09a96b50e2b508363cffc",
+      "raw_response": "```json\n{\n  \"ad_probability\": 0.15,\n  \"ad_confidence\": 0.5,\n  \"authenticity\": 0.9,\n  \"specificity\": 0.6,\n  \"local_probability\": 0.3,\n  \"sentiment\": {\n    \"food\": 0.9,\n    \"service\": null,\n    \"price\": null,\n    \"atmosphere\": null,\n    \"accessibility\": null\n  },\n  \"visit_context\": {\n    \"repeat_visit\": true,\n    \"wait_time_mentioned\": false,\n    \"menu_specificity\": 0.7,\n    \"negative_points_present\": false\n  },\n  \"signals\": {\n    \"ad_signals\": [],\n    \"authentic_signals\": [\n      {\"code\": \"repeat_visit\", \"quote\": \"1980년대부터 다니던 곳\"},\n      {\"code\": \"specific_menu_eval\", \"quote\": \"냉면 맛이 예전 그대로예요\"},\n      {\"code\": \"",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(invalid JSON: Expecting ',' delimiter: line 24 column 64 (char 592)) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "invalid JSON: Expecting ',' delimiter: line 24 column 64 (char 592)"
+      ],
+      "latency_ms": 69302,
+      "input_tokens": 66355,
+      "output_tokens": 24117,
+      "attempts": 3
+    },
+    {
+      "run_id": "canary-baseline-v1",
+      "review_id": "canary-15",
+      "model": "glm-4.5-flash",
+      "prompt_version": "review-analysis-v1",
+      "input_hash": "7022a379b8bde0169d76b9f5e23a936645b26d986d3b4c13b898b99790535396",
+      "raw_response": "",
+      "validated_result": {
+        "analyzer": "zai:glm-4.5-flash",
+        "prompt_version": "review-analysis-v1",
+        "ad_probability": 0.5,
+        "ad_confidence": 0.0,
+        "authenticity": 0.5,
+        "specificity": 0.5,
+        "local_probability": 0.5,
+        "sentiment": {
+          "food": null,
+          "service": null,
+          "price": null,
+          "atmosphere": null,
+          "accessibility": null
+        },
+        "visit_context": {
+          "repeat_visit": null,
+          "wait_time_mentioned": null,
+          "menu_specificity": 0.5,
+          "negative_points_present": null
+        },
+        "ad_signals": [],
+        "authentic_signals": [],
+        "pseudo_rating": null,
+        "summary": "분석 실패(no JSON object in output) — 수동 검토 필요",
+        "flags": {
+          "insufficient_text": false,
+          "needs_manual_review": true
+        }
+      },
+      "validation_errors": [
+        "no JSON object in output",
+        "no JSON object in output"
+      ],
+      "latency_ms": 58984,
+      "input_tokens": 71198,
+      "output_tokens": 25917,
+      "attempts": 3
+    }
+  ]
+}

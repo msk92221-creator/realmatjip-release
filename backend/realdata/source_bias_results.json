@@ -1,0 +1,162 @@
+[
+  {
+    "original_source": "naver_map",
+    "text": "회사가 근처라 점심으로 자주 갑니다. 이번이 다섯 번째 방문인데 국물 맛이 항상 일정해서 ",
+    "manual_import": {
+      "ad_probability": 0.05,
+      "ad_confidence": 0.9,
+      "attempts": 1
+    },
+    "naver_map": {
+      "ad_probability": 0.05,
+      "ad_confidence": 0.9,
+      "attempts": 1
+    },
+    "naver_blog": {
+      "ad_probability": 0.05,
+      "ad_confidence": 0.9,
+      "attempts": 1
+    },
+    "delta_source": 0.0
+  },
+  {
+    "original_source": "naver_map",
+    "text": "동네에서 10년째 가는 단골집이에요. 엄마랑 자주 오는데 순대국이 여기가 최고예요. 주차장",
+    "manual_import": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.9,
+      "attempts": 1
+    },
+    "naver_map": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.9,
+      "attempts": 1
+    },
+    "naver_blog": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.9,
+      "attempts": 1
+    },
+    "delta_source": 0.0
+  },
+  {
+    "original_source": "google_places",
+    "text": "집이 근처라 배고플 때 갑니다. 5년째 가는데 맛이 변한 적이 없어요. 여름엔 줄 서니 오",
+    "manual_import": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "attempts": 1
+    },
+    "naver_map": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "attempts": 1
+    },
+    "naver_blog": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "attempts": 1
+    },
+    "delta_source": 0.0
+  },
+  {
+    "original_source": "kakao_map",
+    "text": "아이 학원 끝나고 엄마들끼리 단골로 가는 곳. 백반이 든든하고 반찬도 계속 챙겨주세요. 1",
+    "manual_import": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "naver_map": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "naver_blog": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "delta_source": 0.0
+  },
+  {
+    "original_source": "naver_map",
+    "text": "맛은 괜찮은데 테이블 간격이 좁아서 대화하기 조금 불편했어요. 국밥 양은 적당합니다.",
+    "manual_import": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "naver_map": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "naver_blog": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "delta_source": 0.0
+  },
+  {
+    "original_source": "google_places",
+    "text": "술 한 잔 하고 다음 날 해장으로 갔는데 국물이 진짜 시원해요. 3번째 재방문입니다.",
+    "manual_import": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "naver_map": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "attempts": 1
+    },
+    "naver_blog": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "delta_source": 0.0
+  },
+  {
+    "original_source": "kakao_map",
+    "text": "직장인들이 점심에 많이 오네요. 메뉴는 국밥 몇 개 없지만 고르기 쉬워요.",
+    "manual_import": {
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "attempts": 1
+    },
+    "naver_map": {
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "attempts": 1
+    },
+    "naver_blog": {
+      "ad_probability": 0.15,
+      "ad_confidence": 0.6,
+      "attempts": 1
+    },
+    "delta_source": 0.0
+  },
+  {
+    "original_source": "naver_map",
+    "text": "가격이 올랐는데 양은 줄었어요. 2인 방문에 3만원. 맛은 나쁘지 않지만 이 가격이면 다른",
+    "manual_import": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "naver_map": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "naver_blog": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.7,
+      "attempts": 1
+    },
+    "delta_source": 0.0
+  }
+]

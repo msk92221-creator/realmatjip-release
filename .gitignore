@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+*.db
+*.sqlite3
+.DS_Store
+
+# Android 빌드 산물 / 기계 로컬 설정
+**/build/
+**/.gradle/
+android/local.properties
+.idea/
+*.iml
+
+# 서명 키는 절대 커밋 금지 (스펙 §11)
+*.keystore
+*.jks
+*.zip

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "diag-normal",
+    "ground_truth": "normal",
+    "category": "확실한 일반",
+    "config": "v2-thinking-off-json-2048",
+    "http_status": 200,
+    "finish_reason": "stop",
+    "content": "{\"ad_probability\":0.1,\"ad_confidence\":0.8,\"authenticity\":0.9,\"specificity\":0.85,\"local_probability\":0.5,\"sentiment\":{\"food\":0.7,\"service\":0.5,\"price\":null,\"atmosphere\":0.4,\"accessibility\":null},\"visit_context\":{\"repeat_visit\":null,\"wait_time_mentioned\":false,\"menu_specificity\":0.8,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"negative_point\",\"quote\":\"테이블 간격이 좁아서 대화하기 조금 불편했어요\"},{\"code\":\"specific_menu_eval\",\"quote\":\"국밥 양은 적당합니다\"}]},\"pseudo_rating\":null,\"summary\":\"구체적인 메뉴 평가와 단점 언급이 포함된 신뢰도 높은 실방문 후기.\",\"flags\":{\"insufficient_text\":false}}",
+    "content_length": 585,
+    "reasoning_content": "",
+    "reasoning_content_length": 0,
+    "prompt_tokens": 2462,
+    "completion_tokens": 248,
+    "latency_ms": 26562,
+    "schema_validation": "PASS",
+    "parsed": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.8,
+      "local_probability": 0.5,
+      "authenticity": 0.9,
+      "specificity": 0.85
+    }
+  },
+  {
+    "id": "diag-likely-ad",
+    "ground_truth": "likely_ad",
+    "category": "카탈로그형 광고",
+    "config": "v2-thinking-off-json-2048",
+    "http_status": 200,
+    "finish_reason": "stop",
+    "content": "{\"ad_probability\":0.92,\"ad_confidence\":0.85,\"authenticity\":0.15,\"specificity\":0.5,\"local_probability\":0.2,\"sentiment\":{\"food\":1.0,\"service\":1.0,\"price\":0.9,\"atmosphere\":1.0,\"accessibility\":0.9},\"visit_context\":{\"repeat_visit\":false,\"wait_time_mentioned\":false,\"menu_specificity\":0.6,\"negative_points_present\":false},\"signals\":{\"ad_signals\":[{\"code\":\"catalog_listing\",\"quote\":\"위치는 강남역 4번 출구 도보 5분, 발렛 파킹 가능합니다. 영업시간 점심 11:30~14:30, 저녁 17:30~22:00\"},{\"code\":\"all_positive_no_drawback\",\"quote\":\"맛 최고 서비스 최고 분위기 최고!\"},{\"code\":\"cta_outlink\",\"quote\":\"예약은 인스타 DM 또는 전화로 가능합니다\"}],\"authentic_signals\":[]},\"pseudo_rating\":4.8,\"summary\":\"매장 정보의 체계적 나열과 전 항목 칭찬, 예약 유도가 포함되어 프로모션성 패턴일 가능성이 매우 높다.\",\"flags\":{\"insufficient_text\":false}}",
+    "content_length": 722,
+    "reasoning_content": "",
+    "reasoning_content_length": 0,
+    "prompt_tokens": 2564,
+    "completion_tokens": 337,
+    "latency_ms": 106353,
+    "schema_validation": "PASS",
+    "parsed": {
+      "ad_probability": 0.92,
+      "ad_confidence": 0.85,
+      "local_probability": 0.2,
+      "authenticity": 0.15,
+      "specificity": 0.5
+    }
+  },
+  {
+    "id": "diag-local",
+    "ground_truth": "normal",
+    "category": "로컬 재방문",
+    "config": "v2-thinking-off-json-2048",
+    "http_status": 200,
+    "finish_reason": "stop",
+    "content": "{\"ad_probability\":0.1,\"ad_confidence\":0.9,\"authenticity\":0.95,\"specificity\":0.85,\"local_probability\":0.95,\"sentiment\":{\"food\":0.95,\"service\":null,\"price\":null,\"atmosphere\":0.8,\"accessibility\":0.6},\"visit_context\":{\"repeat_visit\":true,\"wait_time_mentioned\":false,\"menu_specificity\":0.9,\"negative_points_present\":true},\"signals\":{\"ad_signals\":[],\"authentic_signals\":[{\"code\":\"repeat_visit\",\"quote\":\"동네에서 10년째 가는 단골집이에요\"},{\"code\":\"specific_menu_eval\",\"quote\":\"순대국이 여기가 최고예요\"},{\"code\":\"negative_point\",\"quote\":\"주차장이 좁은 게 흠\"},{\"code\":\"local_context\",\"quote\":\"동네에서 10년째 가는 단골집이에요\"}]},\"pseudo_rating\":null,\"summary\":\"장기간 단골과 구체적 메뉴 평가, 단점 언급이 진성 리뷰의 신뢰도를 높인다.\",\"flags\":{\"insufficient_text\":false}}",
+    "content_length": 690,
+    "reasoning_content": "",
+    "reasoning_content_length": 0,
+    "prompt_tokens": 2468,
+    "completion_tokens": 303,
+    "latency_ms": 50249,
+    "schema_validation": "PASS",
+    "parsed": {
+      "ad_probability": 0.1,
+      "ad_confidence": 0.9,
+      "local_probability": 0.95,
+      "authenticity": 0.95,
+      "specificity": 0.85
+    }
+  }
+]

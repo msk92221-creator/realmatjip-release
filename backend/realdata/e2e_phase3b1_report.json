@@ -1,0 +1,112 @@
+{
+  "phase": "3B.1",
+  "search": {
+    "queries": 5,
+    "unique_places": 25,
+    "field_completeness": "25/25 모든 필드 100%"
+  },
+  "import": {
+    "restaurants": 10,
+    "reviews": 50,
+    "duplicate_reimport": "inserted=0 확인"
+  },
+  "analyze": {
+    "model": "glm-4.5-flash",
+    "completed": 50,
+    "cached": 0,
+    "failed": 0,
+    "tokens_input": 128246,
+    "tokens_output": 15253,
+    "estimated_cost_usd": 0.1105,
+    "llm_calls": 50,
+    "elapsed_min": 20
+  },
+  "scores": {
+    "scored": 9,
+    "gated_insufficient": 1,
+    "gated_restaurant": "을지로 양대장 (n_eff 1.95 < min 2.0)"
+  },
+  "per_restaurant_llm": [
+    {
+      "name": "덕자네방앗간",
+      "n": 5,
+      "avg_ad_probability": 0.31,
+      "avg_local_probability": 0.67
+    },
+    {
+      "name": "홍대부대찌개",
+      "n": 5,
+      "avg_ad_probability": 0.26,
+      "avg_local_probability": 0.68
+    },
+    {
+      "name": "오트 성수 Oatt Seongsu",
+      "n": 5,
+      "avg_ad_probability": 0.15,
+      "avg_local_probability": 0.592
+    },
+    {
+      "name": "파이프그라운드 서울숲",
+      "n": 5,
+      "avg_ad_probability": 0.14,
+      "avg_local_probability": 0.55
+    },
+    {
+      "name": "세광양대창 을지로점",
+      "n": 5,
+      "avg_ad_probability": 0.13,
+      "avg_local_probability": 0.55
+    },
+    {
+      "name": "을지로 양대장",
+      "n": 5,
+      "avg_ad_probability": 0.13,
+      "avg_local_probability": 0.536
+    },
+    {
+      "name": "반장즉석떡볶이",
+      "n": 5,
+      "avg_ad_probability": 0.13,
+      "avg_local_probability": 0.776
+    },
+    {
+      "name": "또보겠지떡볶이집 강남헬로몽키점",
+      "n": 5,
+      "avg_ad_probability": 0.12,
+      "avg_local_probability": 0.518
+    },
+    {
+      "name": "김장독 홍대본점",
+      "n": 5,
+      "avg_ad_probability": 0.12,
+      "avg_local_probability": 0.614
+    },
+    {
+      "name": "종로설렁탕",
+      "n": 5,
+      "avg_ad_probability": 0.12,
+      "avg_local_probability": 0.672
+    }
+  ],
+  "android_e2e": {
+    "emulator": "realematjip-e2e (headless)",
+    "home_list": "trust 랭킹 순 렌더링 확인 (김장독→오트성수→세광양대창... 근거라벨·n_eff·점수 표시)",
+    "developer_status": "연결됩 — ok · 식당 10 · 리뷰 50 · 분석 50 · 미분석 0 실시간 표시",
+    "google_search": "앱에서 'Seongsu donkkasu' 검색 → 서버 호출 확인(5→6) → 결과 4곳+ 렌더링 (홍익돈까스 ★4.9/696 등)",
+    "preview": "도도한면 프리뷰 패널 렌더링 (★4.7 · 전체 162 · 샘플 5 · 신규 5 · 중복 0), 서버 호출 확인(10→11)",
+    "import": "홍익돈까스 성수직영점 Import 실행 → '리뷰 5개 추가 (중복 0)' 메시지 + 서버 commit 확인(11→12)",
+    "final_db": "식당 11 · 리뷰 55 (앱 임포트 1곳 포함)",
+    "note": "키보드가 프리뷰 패널을 가리는 UX 이슈 관찰 — 프리뷰 로드 시 키보드 자동 숨김은 개선 후보"
+  },
+  "code_changes": [
+    {
+      "file": "app/providers/google_places/client.py",
+      "change": "헤더 오타 수정 X-Goog-Field-Mask → X-Goog-FieldMask (실 API 400으로 발견, 유닛테스트가 못 잡던 버그)"
+    },
+    {
+      "file": "app/analysis/analyzer.py",
+      "change": "validate_model에 ZAI_SKIP_MODEL_CHECK 우회 추가 (glm-4.5-flash는 /models 미등록이지만 호출 가능 — 3A.3 실측과 동일)"
+    }
+  ],
+  "tests": "백엔드 202개 전부 통과 (변경 후 회귀 없음)"
+}

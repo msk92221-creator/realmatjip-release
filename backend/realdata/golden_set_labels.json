@@ -1,0 +1,50 @@
+{
+  "_description": "Phase 3A.2 Golden Set source-of-truth — 59개 리뷰의 명시적 2축 라벨",
+  "_rules": {
+    "ad": "원문에 협찬/제공받음/체험단/원고료 명시 (해당 데이터에 없음)",
+    "likely_ad": "직접 disclosure 없으나 복합 정황(카탈로그+전항목칭찬+CTA)으로 광고 가능성 매우 높음",
+    "ambiguous": "광고처럼 보이지만 근거 불충분 (바이럴/유사문구/SNS반응형)",
+    "normal": "광고 판단 근거 없음",
+    "suspicious": "조작 의심 (유사문구 반복 등) — manipulation 축 전용"
+  },
+  "_invariants": [
+    "sum(ad_label counts) == 59",
+    "each review has exactly one ad_label",
+    "manipulation_label is optional separate axis",
+    "dataset(natural/challenge) is independent of ad_label"
+  ],
+  "labels": [
+    {"text_prefix": "광화문 국밥 맛집으로 유명한 곳에", "ad_label": "likely_ad", "manipulation_label": null, "dataset": "challenge",
+     "reason": "카탈로그형 블로그: 위치/영업시간/포장/단체석/가격 나열 + 전 항목 만점 + 강추 CTA"},
+    {"text_prefix": "서울 3대 국밥집 반열에 오른", "ad_label": "likely_ad", "manipulation_label": null, "dataset": "challenge",
+     "reason": "카탈로그형 블로그: 30년 전통 USP + 프리미엄 식재료 + 찾아가는 길 + 주차 + 연예인 언급 + 강추"},
+    {"text_prefix": "연남동 핫플레이스 수제돈까스", "ad_label": "likely_ad", "manipulation_label": null, "dataset": "challenge",
+     "reason": "카탈로그형 블로그: 1등급/72시간 숙성 USP + 위치/주차/영업시간/예약 + 인스타감성 + 데이트 강추"},
+    {"text_prefix": "강남 최고의 스테이크 하우스를", "ad_label": "likely_ad", "manipulation_label": null, "dataset": "challenge",
+     "reason": "카탈로그형 블로그: 1++한우 USP + 발렛 + 예약안내 + 코스가격 + 전 항목 최고"},
+
+    {"text_prefix": "성수동 새로 생긴 카페 다녀왔어요. 분위기 진짜", "ad_label": "ambiguous", "manipulation_label": "suspicious", "dataset": "challenge",
+     "reason": "유사 문구가 서로 다른 리뷰어로 3개 반복 — 조작 의심. 광고 여부는 근거 불충분"},
+    {"text_prefix": "성수동 새로 생긴 카페 다녀왔어요. 분위기 너무", "ad_label": "ambiguous", "manipulation_label": "suspicious", "dataset": "challenge",
+     "reason": "위와 유사 문구 (2글자만 다름)"},
+    {"text_prefix": "성수동 새로 생긴 카페 다녀왔습니다. 분위기 진짜", "ad_label": "ambiguous", "manipulation_label": "suspicious", "dataset": "challenge",
+     "reason": "위와 유사 문구 (어미만 다름)"},
+    {"text_prefix": "유튜브 보고 왔어요! 크루아상", "ad_label": "ambiguous", "manipulation_label": null, "dataset": "challenge",
+     "reason": "SNS 바이럴 반응형 — 유튜브 보고 방문했다는 것 자체는 광고가 아니나, 바이럴 캠페인의 일부일 가능성 배제 불가"},
+
+    {"text_prefix": "인스타에서 보고 왔는데 실물이", "ad_label": "normal", "manipulation_label": null, "dataset": "natural",
+     "reason": "SNS 보고 방문 — 일반 관광객 반응"},
+    {"text_prefix": "요즘 SNS에서 제일 핫한", "ad_label": "normal", "manipulation_label": null, "dataset": "natural",
+     "reason": "SNS 바이럴 반응 — 광고 근거 없음"},
+    {"text_prefix": "릴스 보고 바로 왔어요", "ad_label": "normal", "manipulation_label": null, "dataset": "natural",
+     "reason": "SNS 보고 방문 — 광고 근거 없음"},
+    {"text_prefix": "SNS 보고 왔는데 실망했어요", "ad_label": "normal", "manipulation_label": null, "dataset": "natural",
+     "reason": "부정적 SNS 반응 — 광고가 아님"}
+  ],
+  "_default": {
+    "ad_label": "normal",
+    "manipulation_label": null,
+    "dataset": "natural",
+    "reason": ""
+  }
+}

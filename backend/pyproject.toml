@@ -1,0 +1,6 @@
+[project]
+name = "realmatjip-backend"
+version = "0.1.0"
+description = "찐맛집 탐색기 — Phase 0 scoring engine (stdlib only)"
+requires-python = ">=3.10"
+dependencies = []

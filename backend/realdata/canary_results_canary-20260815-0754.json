@@ -1,0 +1,11 @@
+{
+  "run_id": "canary-20260815-0754",
+  "model": "glm-4.5-air",
+  "prompt_version": "review-analysis-v1",
+  "timestamp": "2026-08-15T07:54:45.047937",
+  "tokens_input": 0,
+  "tokens_output": 0,
+  "calls": 0,
+  "results": [],
+  "runs_log": []
+}
