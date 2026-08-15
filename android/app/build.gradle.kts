@@ -12,7 +12,10 @@ val localProperties = Properties().apply {
     val f = rootProject.file("local.properties")
     if (f.exists()) f.inputStream().use { load(it) }
 }
-val mapsApiKey: String = localProperties.getProperty("MAPS_API_KEY", "")
+// CI에서는 시크릿을 환경변수로 주입한다(local.properties는 커밋되지 않으므로).
+// 로컬에서는 local.properties의 값을 쓴다 — 키스토어 설정과 같은 방식.
+val mapsApiKey: String = System.getenv("MAPS_API_KEY")
+    ?: localProperties.getProperty("MAPS_API_KEY", "")
 
 android {
     namespace = "com.realmatjip.app"

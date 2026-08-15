@@ -2,6 +2,7 @@ name: Release APK
 
 # Phase 4 (스펙 §10): tag push → test → build → sign → sha256 → GitHub Release
 # 필수 시크릿: KEYSTORE_BASE64, KEYSTORE_PASSWORD, KEY_ALIAS, KEY_PASSWORD
+# 선택 시크릿: MAPS_API_KEY (없으면 지도 화면이 안내 문구로 대체된다)
 # 릴리즈 저장소(D2)에서 이 워크플로우를 실행하거나, APP_REPO를 앱 저장소로 둔다.
 
 on:
@@ -67,6 +68,8 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          # 없으면 지도 화면이 "API 키가 필요합니다" 안내로 대체된다(빌드는 성공).
+          MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
         run: ./gradlew assembleRelease --no-daemon
 
       # 5) 자산 준비 — universal APK + sha256 + update-config.json (머신리더블)
