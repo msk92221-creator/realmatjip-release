@@ -32,7 +32,9 @@ class SettingsViewModel @Inject constructor(
         val tokenEdited: Boolean = false,
     )
 
-    private val edits = MutableStateFlow(Pair("", "")) // (url 입력값, token 입력값)
+    /** (url 입력값, token 입력값) — null이면 "아직 편집 안 함"(저장값을 그대로 보여준다).
+     * 빈 문자열은 "사용자가 지웠다"는 뜻이므로 null과 구분해야 필드를 비울 수 있다. */
+    private val edits = MutableStateFlow<Pair<String?, String?>>(null to null)
 
     val uiState: StateFlow<UiState> = combine(
         settingsDataStore.backendUrl,
@@ -42,12 +44,12 @@ class SettingsViewModel @Inject constructor(
         edits,
     ) { url, token, adFilter, devMode, (editedUrl, editedToken) ->
         UiState(
-            backendUrl = if (editedUrl.isNotEmpty()) editedUrl else url,
-            apiToken = if (editedToken.isNotEmpty()) editedToken else token,
+            backendUrl = editedUrl ?: url,
+            apiToken = editedToken ?: token,
             defaultAdFilter = adFilter,
             developerMode = devMode,
-            urlEdited = editedUrl.isNotEmpty(),
-            tokenEdited = editedToken.isNotEmpty(),
+            urlEdited = editedUrl != null,
+            tokenEdited = editedToken != null,
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), UiState())
 
@@ -69,12 +71,7 @@ class SettingsViewModel @Inject constructor(
     }
 
     fun saveConnection() {
-        val (url, token) = edits.value
-        viewModelScope.launch {
-            if (url.isNotEmpty()) settingsDataStore.setBackendUrl(url)
-            if (token.isNotEmpty()) settingsDataStore.setApiToken(token)
-            edits.value = Pair("", "")
-        }
+        viewModelScope.launch { saveCurrentEdits() }
     }
 
     fun setDefaultAdFilter(filter: AdFilter) {
@@ -100,10 +97,11 @@ class SettingsViewModel @Inject constructor(
         }
     }
 
+    /** 편집된 항목만 저장한다. 빈 값으로 저장하면 기본 주소로 되돌아간다(SettingsDataStore 참고). */
     private suspend fun saveCurrentEdits() {
         val (url, token) = edits.value
-        if (url.isNotEmpty()) settingsDataStore.setBackendUrl(url)
-        if (token.isNotEmpty()) settingsDataStore.setApiToken(token)
-        edits.value = Pair("", "")
+        if (url != null) settingsDataStore.setBackendUrl(url)
+        if (token != null) settingsDataStore.setApiToken(token)
+        edits.value = null to null
     }
 }
