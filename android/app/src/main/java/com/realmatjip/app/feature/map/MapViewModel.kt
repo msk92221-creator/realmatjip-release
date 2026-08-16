@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.realmatjip.app.BuildConfig
 import com.realmatjip.app.core.network.ApiError
 import com.realmatjip.app.core.network.ApiResult
+import com.realmatjip.app.core.location.LocationProvider
 import com.realmatjip.app.domain.model.Restaurant
 import com.realmatjip.app.domain.repository.RestaurantRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -28,6 +29,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MapViewModel @Inject constructor(
     private val restaurantRepository: RestaurantRepository,
+    private val locationProvider: LocationProvider,
 ) : ViewModel() {
 
     data class UiState(
@@ -71,6 +73,32 @@ class MapViewModel @Inject constructor(
 
     fun select(restaurantId: String?) {
         _uiState.value = _uiState.value.copy(selectedId = restaurantId)
+    }
+
+    // ── 내 위치 버튼: 좌표만 노출하고 카메라 이동은 화면 계층에서 (D4) ──
+
+    private val _cameraTarget = MutableStateFlow<Pair<Double, Double>?>(null)
+    val cameraTarget: StateFlow<Pair<Double, Double>?> = _cameraTarget.asStateFlow()
+    var locationFailed = MutableStateFlow(false)
+
+    fun moveToMyLocation() {
+        viewModelScope.launch {
+            locationFailed.value = false
+            _cameraTarget.value = locationProvider.currentLocation()
+                ?: run { locationFailed.value = true; null }
+        }
+    }
+
+    /** 임포트/재계산 완료 후 마커 새로고침. */
+    fun refresh() {
+        viewModelScope.launch {
+            when (val result = restaurantRepository.search(limit = 60)) {
+                is ApiResult.Success ->
+                    _uiState.value = _uiState.value.copy(restaurants = result.data)
+                is ApiResult.Failure ->
+                    _uiState.value = _uiState.value.copy(error = result.error, errorDetail = result.detail)
+            }
+        }
     }
 
     fun dismissError() {

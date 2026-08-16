@@ -62,23 +62,33 @@ class NearbyViewModel @Inject constructor(
                 )
                 return@launch
             }
-            val (lat, lng) = location
-            _uiState.value = _uiState.value.copy(phase = Phase.Searching, myLat = lat, myLng = lng)
-            when (val result = providerRepository.search("맛집", lat, lng)) {
-                is ApiResult.Success -> {
-                    if (result.data.isEmpty()) {
-                        _uiState.value = _uiState.value.copy(
-                            phase = Phase.Failed, message = "주변에 결과가 없어요",
-                        )
-                    } else {
-                        _uiState.value = _uiState.value.copy(phase = Phase.Results, results = result.data)
-                    }
-                }
-                is ApiResult.Failure ->
+            searchAt(location.first, location.second)
+        }
+    }
+
+    /** 임의 좌표 탐색 — 지도 중심 등. GPS와 무관하게 그 지역 맛집을 찾는다. */
+    fun exploreAt(lat: Double, lng: Double) {
+        if (_uiState.value.working) return
+        viewModelScope.launch { searchAt(lat, lng) }
+    }
+
+    /** 가드 없는 실제 검색 — explore()는 Locating(working) 상태에서도 호출해야 한다. */
+    private suspend fun searchAt(lat: Double, lng: Double) {
+        _uiState.value = _uiState.value.copy(phase = Phase.Searching, myLat = lat, myLng = lng)
+        when (val result = providerRepository.search("맛집", lat, lng)) {
+            is ApiResult.Success -> {
+                if (result.data.isEmpty()) {
                     _uiState.value = _uiState.value.copy(
-                        phase = Phase.Failed, message = result.error.userMessage(),
+                        phase = Phase.Failed, message = "주변에 결과가 없어요",
                     )
+                } else {
+                    _uiState.value = _uiState.value.copy(phase = Phase.Results, results = result.data)
+                }
             }
+            is ApiResult.Failure ->
+                _uiState.value = _uiState.value.copy(
+                    phase = Phase.Failed, message = result.error.userMessage(),
+                )
         }
     }
 

@@ -126,7 +126,7 @@ fun NearbySection(viewModel: NearbyViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun NearbyPlaceRow(
+internal fun NearbyPlaceRow(
     place: GooglePlace,
     myLat: Double?,
     myLng: Double?,
@@ -162,7 +162,7 @@ private fun distanceMeters(lat1: Double?, lng1: Double?, lat2: Double, lng2: Dou
     return (r * 2 * atan2(sqrt(a), sqrt(1 - a))).toInt()
 }
 
-private fun phaseLabel(phase: NearbyViewModel.Phase): String = when (phase) {
+internal fun phaseLabel(phase: NearbyViewModel.Phase): String = when (phase) {
     NearbyViewModel.Phase.Locating -> "위치 확인 중…"
     NearbyViewModel.Phase.Searching -> "주변 맛집 검색 중…"
     NearbyViewModel.Phase.Importing -> "식당 추가 중…"

@@ -132,7 +132,7 @@ class MapViewModelTest {
     @Test
     fun `초기 로드 후 카메라 이동 시 bbox 검색`() {
         val repo = FakeRestaurantRepository().apply { restaurants = listOf(testRestaurant()) }
-        val viewModel = MapViewModel(repo)
+        val viewModel = MapViewModel(repo, FakeLocationProvider())
         mainDispatcherRule.advanceUntilIdle()
         assertEquals(1, repo.searchCalls.size)
 
@@ -150,7 +150,7 @@ class MapViewModelTest {
     @Test
     fun `마커 선택`() {
         val repo = FakeRestaurantRepository()
-        val viewModel = MapViewModel(repo)
+        val viewModel = MapViewModel(repo, FakeLocationProvider())
         mainDispatcherRule.advanceUntilIdle()
 
         viewModel.select("rest-b")
@@ -247,4 +247,10 @@ class RestaurantDetailViewModelTest {
         assertTrue(favoriteRepo.added.contains("rest-b"))
         assertTrue(viewModel.uiState.value.isFavorite)
     }
+}
+
+
+/** 지도 테스트용 — 항상 좌표 하나 반환. */
+class FakeLocationProvider : com.realmatjip.app.core.location.LocationProvider {
+    override suspend fun currentLocation(): Pair<Double, Double>? = 37.5 to 127.0
 }

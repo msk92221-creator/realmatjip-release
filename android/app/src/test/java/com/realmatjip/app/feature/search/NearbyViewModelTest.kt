@@ -49,6 +49,22 @@ class NearbyViewModelTest {
     }
 
     @Test
+    fun `임의 좌표 탐색 - 지도 중심에서 검색`() {
+        val (vm, _) = viewModel(FakeLocation(result = null)) to Unit // GPS 미사용 확인용
+        val provider = FakeProviderRepository()
+        val admin = FakeAdminRepository()
+        val vm2 = NearbyViewModel(FakeLocation(result = null), provider, admin)
+        provider.searchResult = ApiResult.Success(listOf(place("x")))
+
+        vm2.exploreAt(35.1, 129.0)
+        mainDispatcherRule.advanceUntilIdle()
+
+        assertEquals(NearbyViewModel.Phase.Results, vm2.uiState.value.phase)
+        assertEquals(1, vm2.uiState.value.results.size)
+        assertEquals(35.1, vm2.uiState.value.myLat!!, 0.001)
+    }
+
+    @Test
     fun `위치 실패 — 안내 메시지`() {
         val (vm, _, _) = viewModel(FakeLocation(result = null))
 
