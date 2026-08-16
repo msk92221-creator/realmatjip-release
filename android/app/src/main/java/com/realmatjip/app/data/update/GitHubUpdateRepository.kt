@@ -26,7 +26,7 @@ import javax.inject.Singleton
 @Singleton
 class GitHubUpdateRepository @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val okHttpClient: OkHttpClient,
+    @javax.inject.Named("noAuth") private val okHttpClient: OkHttpClient,
     private val store: UpdateCheckStore,
     private val json: Json,
     @javax.inject.Named("currentVersion") private val currentVersion: String,
