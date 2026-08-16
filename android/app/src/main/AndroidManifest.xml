@@ -3,6 +3,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 주변 탐색 (근거: 검색 locationBias) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Phase 4: 사용자 동의 APK 설치 (스펙 §10 — 자동 설치 금지) -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 

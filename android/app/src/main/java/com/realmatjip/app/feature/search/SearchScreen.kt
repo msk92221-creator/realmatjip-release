@@ -36,6 +36,7 @@ fun SearchScreen(
     val state by viewModel.uiState.collectAsState()
 
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+        NearbySection()
         OutlinedTextField(
             value = state.query,
             onValueChange = viewModel::onQueryChange,

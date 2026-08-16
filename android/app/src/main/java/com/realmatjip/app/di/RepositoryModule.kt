@@ -54,6 +54,12 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
+    abstract fun bindLocationProvider(
+        impl: com.realmatjip.app.core.location.FusedLocationProvider,
+    ): com.realmatjip.app.core.location.LocationProvider
+
+    @Binds
+    @Singleton
     abstract fun bindAppSettings(impl: SettingsDataStore): AppSettings
 
     @Binds

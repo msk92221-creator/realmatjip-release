@@ -25,8 +25,8 @@ android {
         applicationId = "com.realmatjip.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 3
-        versionName = "0.3.0"
+        versionCode = 4
+        versionName = "0.3.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -115,6 +115,8 @@ dependencies {
     // 지도 (D4: provider 추상화 — feature/map 안에서만 참조)
     implementation("com.google.maps.android:maps-compose:8.4.0")
     implementation("com.google.android.gms:play-services-maps:20.0.0")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
 
     // 단위 테스트
     testImplementation("junit:junit:4.13.2")
