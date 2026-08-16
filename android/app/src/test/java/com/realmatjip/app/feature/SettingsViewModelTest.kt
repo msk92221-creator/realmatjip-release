@@ -31,7 +31,11 @@ class SettingsViewModelTest {
         override val apiToken: Flow<String> = MutableStateFlow("")
         override val defaultAdFilter: Flow<AdFilter> = MutableStateFlow(AdFilter.BASIC)
         override val developerMode: Flow<Boolean> = MutableStateFlow(false)
+        override val homeRegionLabel: Flow<String> = MutableStateFlow("")
+        override val homeRegionLat: Flow<Float> = MutableStateFlow(0f)
+        override val homeRegionLng: Flow<Float> = MutableStateFlow(0f)
 
+        override suspend fun setHomeRegion(label: String, lat: Double, lng: Double) = Unit
         override suspend fun setBackendUrl(url: String) {
             savedUrls += url
             urlFlow.value = url

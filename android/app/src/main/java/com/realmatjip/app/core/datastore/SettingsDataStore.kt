@@ -2,6 +2,7 @@ package com.realmatjip.app.core.datastore
 
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -25,6 +26,9 @@ class SettingsDataStore @Inject constructor(
         val API_TOKEN = stringPreferencesKey("api_token")
         val DEFAULT_AD_FILTER = stringPreferencesKey("default_ad_filter")
         val DEVELOPER_MODE = booleanPreferencesKey("developer_mode")
+        val HOME_REGION_LABEL = stringPreferencesKey("home_region_label")
+        val HOME_REGION_LAT = floatPreferencesKey("home_region_lat")
+        val HOME_REGION_LNG = floatPreferencesKey("home_region_lng")
     }
 
     override val backendUrl: Flow<String> = context.settingsDataStore.data.map { prefs ->
@@ -59,5 +63,23 @@ class SettingsDataStore @Inject constructor(
 
     override suspend fun setDeveloperMode(enabled: Boolean) {
         context.settingsDataStore.edit { it[Keys.DEVELOPER_MODE] = enabled }
+    }
+
+    override val homeRegionLabel: Flow<String> = context.settingsDataStore.data.map { prefs ->
+        prefs[Keys.HOME_REGION_LABEL] ?: ""
+    }
+    override val homeRegionLat: Flow<Float> = context.settingsDataStore.data.map { prefs ->
+        prefs[Keys.HOME_REGION_LAT] ?: 0f
+    }
+    override val homeRegionLng: Flow<Float> = context.settingsDataStore.data.map { prefs ->
+        prefs[Keys.HOME_REGION_LNG] ?: 0f
+    }
+
+    override suspend fun setHomeRegion(label: String, lat: Double, lng: Double) {
+        context.settingsDataStore.edit { prefs ->
+            prefs[Keys.HOME_REGION_LABEL] = label
+            prefs[Keys.HOME_REGION_LAT] = lat.toFloat()
+            prefs[Keys.HOME_REGION_LNG] = lng.toFloat()
+        }
     }
 }

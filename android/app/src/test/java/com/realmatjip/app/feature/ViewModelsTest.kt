@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import com.realmatjip.app.FakeAdminRepository
 import com.realmatjip.app.FakeAppSettings
 import com.realmatjip.app.FakeFavoriteRepository
+import com.realmatjip.app.FakeProviderRepository
 import com.realmatjip.app.FakeRecentRepository
 import com.realmatjip.app.FakeRestaurantRepository
 import com.realmatjip.app.MainDispatcherRule
@@ -15,6 +16,7 @@ import com.realmatjip.app.feature.search.SearchViewModel
 import com.realmatjip.app.testDetail
 import com.realmatjip.app.testRestaurant
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableStateFlow
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
@@ -34,7 +36,16 @@ class HomeViewModelTest {
             restaurants = listOf(testRestaurant())
         }
         val recentRepo = FakeRecentRepository()
-        val viewModel = HomeViewModel(restaurantRepo, recentRepo)
+        val viewModel = HomeViewModel(
+            restaurantRepo, FakeProviderRepository(),
+            FakeLocationProvider(),
+            FakeAppSettings(
+                homeRegionLabel = MutableStateFlow("테스트지역"),
+                homeRegionLat = MutableStateFlow(37.5f),
+                homeRegionLng = MutableStateFlow(127.0f),
+            ),
+            recentRepo,
+        )
         mainDispatcherRule.advanceUntilIdle()
 
         val state = viewModel.uiState.value
@@ -48,7 +59,16 @@ class HomeViewModelTest {
     fun `최근 본 맛집 반영`() {
         val restaurantRepo = FakeRestaurantRepository()
         val recentRepo = FakeRecentRepository()
-        val viewModel = HomeViewModel(restaurantRepo, recentRepo)
+        val viewModel = HomeViewModel(
+            restaurantRepo, FakeProviderRepository(),
+            FakeLocationProvider(),
+            FakeAppSettings(
+                homeRegionLabel = MutableStateFlow("테스트지역"),
+                homeRegionLat = MutableStateFlow(37.5f),
+                homeRegionLng = MutableStateFlow(127.0f),
+            ),
+            recentRepo,
+        )
         mainDispatcherRule.advanceUntilIdle()
 
         kotlinx.coroutines.runBlocking { recentRepo.record("rest-b", "을지면옥", "냉면", 76.6) }

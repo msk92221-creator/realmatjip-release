@@ -1,6 +1,7 @@
 package com.realmatjip.app.feature.home
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -11,11 +12,16 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -66,6 +72,58 @@ fun HomeScreen(
                         (meta.promptVersion?.let { " · 프롬프트 $it" } ?: ""),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        }
+
+        // 기준 지역 설정 바 — 설정 후에만 그 지역 Top이 나온다
+        val regionInput = remember { mutableStateOf("") }
+        Column(Modifier.padding(horizontal = 16.dp)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Button(onClick = viewModel::useMyLocation, enabled = !state.locating) {
+                    Text(if (state.locating) "찾는 중…" else "📍 내 위치")
+                }
+                OutlinedTextField(
+                    value = regionInput.value,
+                    onValueChange = { regionInput.value = it },
+                    placeholder = { Text("지역명 (성남, 강남역…)") },
+                    singleLine = true,
+                    modifier = Modifier.weight(1f),
+                )
+                Button(
+                    onClick = { viewModel.searchRegion(regionInput.value) },
+                    enabled = !state.locating && regionInput.value.isNotBlank(),
+                ) { Text("검색") }
+            }
+            if (state.locating) {
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.padding(top = 6.dp),
+                ) {
+                    CircularProgressIndicator(Modifier.width(16.dp), strokeWidth = 2.dp)
+                    Text("지역 확인 중…", style = MaterialTheme.typography.labelMedium)
+                }
+            }
+            state.message?.let {
+                Text(
+                    it, style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.error,
+                    modifier = Modifier.padding(top = 4.dp),
+                )
+            }
+            if (state.hasRegion) {
+                Text(
+                    "📍 ${state.regionLabel} 근처 기준",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(top = 6.dp),
+                )
+            } else {
+                Text(
+                    "지역을 설정하면 그 지역의 찐맛집 Top을 보여줍니다",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 6.dp),
                 )
             }
         }

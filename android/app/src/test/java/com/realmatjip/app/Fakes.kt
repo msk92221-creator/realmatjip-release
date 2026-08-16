@@ -193,11 +193,21 @@ class FakeAppSettings(
     override val apiToken: Flow<String> = MutableStateFlow(""),
     override val defaultAdFilter: Flow<AdFilter> = MutableStateFlow(AdFilter.BASIC),
     override val developerMode: Flow<Boolean> = MutableStateFlow(false),
+    override val homeRegionLabel: Flow<String> = MutableStateFlow(""),
+    override val homeRegionLat: Flow<Float> = MutableStateFlow(0f),
+    override val homeRegionLng: Flow<Float> = MutableStateFlow(0f),
 ) : AppSettings {
+    var savedLabel: String = ""
+    var savedLat: Double = 0.0
+    var savedLng: Double = 0.0
+
     override suspend fun setBackendUrl(url: String) = Unit
     override suspend fun setApiToken(token: String) = Unit
     override suspend fun setDefaultAdFilter(filter: AdFilter) = Unit
     override suspend fun setDeveloperMode(enabled: Boolean) = Unit
+    override suspend fun setHomeRegion(label: String, lat: Double, lng: Double) {
+        savedLabel = label; savedLat = lat; savedLng = lng
+    }
 }
 
 class FakeProviderRepository : com.realmatjip.app.domain.repository.ProviderRepository {
