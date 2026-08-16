@@ -140,7 +140,12 @@ fun HomeScreen(
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 if (state.topRestaurants.isEmpty()) {
-                    item { EmptyView(text = "아직 점수가 계산된 식당이 없습니다.\nDeveloper 화면에서 점수 재계산을 실행하세요") }
+                    if (!state.hasRegion) {
+                        item { EmptyView(text = "위에서 내 위치 또는 지역명 검색으로 지역을 정해주세요") }
+                    } else {
+                        item { EmptyView(text = "이 지역엔 아직 추가된 맛집이 없습니다.
+검색/지도 탭에서 이 지역 맛집을 추가해 보세요") }
+                    }
                 } else {
                     item { SectionHeader("찐맛집 Top") }
                     items(state.topRestaurants, key = { it.id }) { restaurant ->
