@@ -143,8 +143,7 @@ fun HomeScreen(
                     if (!state.hasRegion) {
                         item { EmptyView(text = "위에서 내 위치 또는 지역명 검색으로 지역을 정해주세요") }
                     } else {
-                        item { EmptyView(text = "이 지역엔 아직 추가된 맛집이 없습니다.
-검색/지도 탭에서 이 지역 맛집을 추가해 보세요") }
+                        item { EmptyView(text = "이 지역엔 아직 추가된 맛집이 없습니다.\n검색/지도 탭에서 이 지역 맛집을 추가해 보세요") }
                     }
                 } else {
                     item { SectionHeader("찐맛집 Top") }
