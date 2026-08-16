@@ -18,6 +18,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SmallFloatingActionButton
 import androidx.compose.material3.Text
@@ -198,6 +199,18 @@ fun MapScreen(
                         onClick = nearbyViewModel::importAllAndFinalize,
                         modifier = Modifier.fillMaxWidth().padding(top = 6.dp),
                     ) { Text("전체 추가 (" + nearby.results.size + "곳)") }
+                    if (nearby.importedCount > 0) {
+                        Row(Modifier.fillMaxWidth().padding(top = 6.dp)) {
+                            Button(
+                                onClick = nearbyViewModel::finalize,
+                                modifier = Modifier.weight(1f),
+                            ) { Text("분석·점수 계산") }
+                            OutlinedButton(
+                                onClick = nearbyViewModel::reset,
+                                modifier = Modifier.padding(start = 8.dp),
+                            ) { Text("닫기") }
+                        }
+                    }
                 }
             }
 
