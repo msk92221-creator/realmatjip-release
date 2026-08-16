@@ -55,7 +55,11 @@ class GitHubUpdateRepository @Inject constructor(
             when {
                 response.code == 304 -> {
                     store.save(etag, now)
-                    return@withContext UpdateState.UpToDate // 변경 없음 — 마지막 확인 결과 유지
+                    // 변경 없음이라도 '그 릴리즈'가 설치됐다는 보장이 없다 —
+                    // 저장해둔 응답으로 현재 버전과 다시 비교한다.
+                    val cached = store.lastReleaseBody()
+                    return@withContext if (cached.isEmpty()) UpdateState.UpToDate
+                    else parseRelease(cached)
                 }
                 !response.isSuccessful ->
                     return@withContext UpdateState.Unavailable(
@@ -64,7 +68,7 @@ class GitHubUpdateRepository @Inject constructor(
             val newEtag = response.header("ETag") ?: ""
             val body = response.body?.string()
                 ?: return@withContext UpdateState.Unavailable("빈 응답")
-            store.save(newEtag, now)
+            store.save(newEtag, now, body)
             parseRelease(body)
         }
     }

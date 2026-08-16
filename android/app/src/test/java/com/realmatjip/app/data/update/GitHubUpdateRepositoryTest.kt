@@ -160,9 +160,18 @@ class GitHubUpdateRepositoryTest {
     }
 
     @Test
-    fun `304 Not Modified는 UpToDate`() = runBlocking {
+    fun `304 + 저장본 없음 - UpToDate`() = runBlocking {
         server.enqueue(MockResponse().setResponseCode(304))
         assertTrue(repo.checkForUpdate(force = true) is UpdateState.UpToDate)
+    }
+
+    @Test
+    fun `304 + 저장본이 최신 - 설치 안 했으면 Available로 재판정`() = runBlocking {
+        store.bodyToReturn = releaseJson()
+        server.enqueue(MockResponse().setResponseCode(304))
+        val state = repo.checkForUpdate(force = true)
+        assertTrue(state is UpdateState.Available)
+        assertEquals("0.3.0", (state as UpdateState.Available).version)
     }
 
     @Test
@@ -248,14 +257,18 @@ class GitHubUpdateRepositoryTest {
     private class FakeStore : UpdateCheckStore {
         var etagToReturn = ""
         var checkedAtToReturn = 0L
+        var bodyToReturn = ""
         var etagSaved = ""
         var checkedAtSaved = 0L
+        var bodySaved = ""
 
         override suspend fun lastCheckEpochMs(): Long = checkedAtToReturn
         override suspend fun etag(): String = etagToReturn
-        override suspend fun save(etag: String, checkedAtMs: Long) {
+        override suspend fun lastReleaseBody(): String = bodyToReturn
+        override suspend fun save(etag: String, checkedAtMs: Long, releaseBody: String) {
             etagSaved = etag
             checkedAtSaved = checkedAtMs
+            bodySaved = releaseBody
         }
     }
 }
